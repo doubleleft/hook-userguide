@@ -1,0 +1,28 @@
+site_name: hook documentation
+repo_url: https://github.com/doubleleft/hook-docs/
+
+site_description: |
+    A RESTful and extendable Backend as a Service that provides
+    instant backend to develop sites and apps faster, with dead-simple
+    integration for JavaScript, iOS, Android and more.
+
+pages:
+  - ['Index.md', 'Getting started']
+
+  # Features
+  - ['Features/Collections.md']
+  - ['Features/Schema.md']
+  - ['Features/Custom-routes.md']
+  - ['Features/Configuration.md']
+  - ['Features/Template-engine.md']
+
+  # More
+  - ['More/Deployment.md']
+
+  # Tutorials
+  - ['Tutorials/OAuth-integration.md']
+  - ['Tutorials/Score-ranking.md']
+  - ['Tutorials/Sending-mails.md']
+
+use_directory_urls: true
+theme: readthedocs
