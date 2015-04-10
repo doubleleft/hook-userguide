@@ -1,4 +1,4 @@
-Templates are compiled using handlebars syntax.
+Templates are compiled using mustache or handlebars syntax.
 
 Generating a template from commandline:
 

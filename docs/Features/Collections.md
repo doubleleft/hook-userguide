@@ -1,3 +1,7 @@
+# Introduction
+
+Collections is where you persist data.
+
 # Observers
 
 When extending back-end code, it's possible to use any of the core dependencies.
