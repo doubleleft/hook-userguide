@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Collections - hook documentation</title>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script>
+
+  <style>
+    body {font-size: 90%;}
+    pre, code {font-size: 100%;}
+    h3, h4, h5, h6 {color: #2980b9; font-weight: 300}
+  </style> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../Index" class="icon icon-home"> hook documentation</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+      <ul class="current">
+    
+        
+            <li class="toctree-l1 ">
+                <a class="" href="../../Index">Overview</a>
+            </li>
+        
+
+    
+        
+        <span>Getting started</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Getting-started/How-to-use">How to use</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Features</span>
+            
+                <li class="toctree-l1 current">
+                    <a class="current" href=".">Collections</a>
+                    
+                        <ul>
+                        
+                            <li class="toctree-l2"><a href="#introduction">Introduction</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#observers">Observers</a></li>
+                            
+                                <li><a class="toctree-l3" href="#events">Events</a></li>
+                            
+                                <li><a class="toctree-l3" href="#custom-collection-items-response">Custom collection item's response</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#querying-the-database">Querying the database</a></li>
+                            
+                                <li><a class="toctree-l3" href="#creating">Creating</a></li>
+                            
+                                <li><a class="toctree-l3" href="#reading">Reading</a></li>
+                            
+                                <li><a class="toctree-l3" href="#updating">Updating</a></li>
+                            
+                                <li><a class="toctree-l3" href="#deleting">Deleting</a></li>
+                            
+                                <li><a class="toctree-l3" href="#continue-here">Continue here...</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#seeding-collections">Seeding collections</a></li>
+                            
+                        
+                        </ul>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../Schema">Schema</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../Custom-routes">Custom routes</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../Configuration">Configuration</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../Template-engine">Template engine</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>More</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../More/Deployment">Deployment</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Tutorials</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Tutorials/OAuth-integration">OAuth integration</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Tutorials/Score-ranking">Score ranking</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Tutorials/Sending-mails">Sending mails</a>
+                    
+                </li>
+            
+        
+
+    
+</ul>
+
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="../../Index"></a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../Index">Docs</a> &raquo;</li>
+    <li>Collections</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/doubleleft/hook-docs/" class="icon icon-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              <h1 id="introduction">Introduction</h1>
+<p>Collections is where you persist data.</p>
+<h1 id="observers">Observers</h1>
+<p>When extending back-end code, it's possible to use any of the core dependencies.
+Read the <a href="http://doubleleft.github.io/hook/">API documentation</a> for details.</p>
+<hr />
+<h2 id="events">Events</h2>
+<p>Observers can listen to collection item events, such as <code>creating</code>, <code>created</code>,
+<code>updating</code>, <code>updated</code>, <code>saving</code>, <code>saved</code>, <code>deleting</code> and <code>deleted</code>.</p>
+<p>You may cancel any <code>*ing</code> event by returning false, or throwing an exception.</p>
+<p>To demonstrate with a real-world example, let's customize our auth Collection to
+allow only specific domain members to register in.</p>
+<pre><code class="bash">$ hook generate:observer auth
+Observer created at 'hook-ext/observers/auth.php'.
+</code></pre>
+
+<pre><code class="php">&lt;?php
+/**
+ * Custom observer for: auth
+ */
+
+class Auth {
+    public function creating($model) {
+        if (strpos($model-&gt;email, '@doubleleft.com') === false) {
+            throw new Exception(&quot;Only doubleleft.com members can register here.&quot;);
+        }
+    }
+}
+</code></pre>
+
+<p>Let's upload the module and test what happens.</p>
+<pre><code class="bash">$ hook module:upload
+Uploading: 'hook-ext/observers/auth.php'
+</code></pre>
+
+<pre><code>$ hook console
+hook: javascript&gt; hook.auth.register({email: &quot;endel.dreyer@gmail.com&quot;, password: &quot;123&quot;})
+Error: Only doubleleft.com members can register here.
+
+hook: javascript&gt; hook.auth.register({email: &quot;edreyer@doubleleft.com&quot;, password: &quot;123&quot;})
+{ email: 'edreyer@doubleleft.com',
+  updated_at: 1397149349,
+  created_at: 1397149349,
+  }
+</code></pre>
+
+<h2 id="custom-collection-items-response">Custom collection item's response</h2>
+<p>It's possible to change the default JSON response of each collection item by
+overriding the observer <code>toArray</code> method. Example:</p>
+<pre><code class="bash">$ hook generate:observer posts
+Observer created at 'hook-ext/observers/posts.php'.
+</code></pre>
+
+<pre><code class="php">&lt;?php
+/**
+ * Custom observer for: posts
+ */
+
+class Posts {
+    public function toArray($model, $array) {
+        if ($model-&gt;expired) {
+            return array('name' =&gt; &quot;This item was expired.&quot;);
+        } else {
+            return $array;
+        }
+    }
+}
+</code></pre>
+
+<p>Let's upload the module and test what happens.</p>
+<pre><code class="bash">$ hook module:upload
+Uploading: 'hook-ext/observers/posts.php'
+</code></pre>
+
+<pre><code>$ hook console
+
+hook: javascript&gt; hook.collection('posts').create({title: &quot;Hello&quot;, expired: false})
+{ title: 'Hello',
+  expired: false,
+  app_id: '36',
+  updated_at: 1397150195,
+  created_at: 1397150195,
+  _id: 1380 }
+
+hook: javascript&gt; hook.collection('posts').create({title: &quot;World&quot;, expired: true})
+{ name: 'This item was expired.' }
+
+hook: javascript&gt; hook.collection('posts').then()
+┌──────────────────────────┬─────────┬─────────┐
+│ _id                      │ title   │ expired │
+├──────────────────────────┼─────────┼─────────┤
+│ '1380'                   │ 'Hello' │ '0'     │
+├──────────────────────────┼─────────┼─────────┤
+│ 'This item was expired.'
+└──────────────────────────┴─────────┴─────────┘
+</code></pre>
+
+<p>Note that every time the JSON should be retrieved, the toArray method is called.
+Even when you're creating the record.</p>
+<h1 id="querying-the-database">Querying the database</h1>
+<p>hook uses Laravel's Eloquent under the hood, so the way to build queries is
+the same. The only difference on hook is that you need a Collection reference
+to start querying.</p>
+<h2 id="creating">Creating</h2>
+<p>Example of creating a Collection item:</p>
+<pre><code class="php">$stuff = App::collection('stuff')-&gt;create([&quot;foo&quot; =&gt; &quot;bar&quot;]);
+</code></pre>
+
+<h2 id="reading">Reading</h2>
+<p>Example retrieving a Collection reference:</p>
+<pre><code class="php">$stuff = App::collection('stuff');
+</code></pre>
+
+<p>Example of query:</p>
+<pre><code class="php">App::collection('stuff')
+  -&gt;where('name', '=', 'John')
+  -&gt;orWhere(function($query)
+  {
+      $query-&gt;where('votes', '&gt;', 100)
+            -&gt;where('title', '&lt;&gt;', 'Admin');
+  })
+  -&gt;get();
+</code></pre>
+
+<h2 id="updating">Updating</h2>
+<pre><code class="php">// update all items matching a filter.
+// in this example &quot;$items_updated&quot; will receive the number of entries that has been updated.
+$items_updated = App::collection('stuff')-&gt;where(&quot;prop_count&quot; =&gt; 1)-&gt;update([&quot;foo&quot; =&gt; &quot;bar&quot;]);
+
+// or update by _id
+$items_updated = App::collection('stuff')-&gt;find(1)-&gt;update([&quot;foo&quot; =&gt; &quot;bar&quot;]);
+</code></pre>
+
+<h2 id="deleting">Deleting</h2>
+<pre><code class="php">// remove all items matching a filter
+$items_removed = App::collection('stuff')-&gt;where(&quot;votes&quot;, '&lt;', 100)-&gt;remove();
+
+// remove item by _id.
+// in this example, the &quot;stuff&quot; item with _id=42 will be removed from the database.
+App::collection('stuff')-&gt;remove(42);
+</code></pre>
+
+<h2 id="continue-here">Continue here...</h2>
+<p>Read more: <a href="http://laravel.com/docs/queries">http://laravel.com/docs/queries</a>
+(Generally you're good by replacing <code>DB::table</code> to <code>App::collection</code> on Query
+Builder examples.)</p>
+<h1 id="seeding-collections">Seeding collections</h1>
+<p>Seeding is the easiest way to populate your default application's data.</p>
+<p>To generate a collection seed file, run <code>generate:seed {collection_name}</code> from
+commandline.</p>
+<pre><code class="bash">hook generate:seed books
+</code></pre>
+
+<p>It will create a seed template at <code>hook-ext/seeds/books.yml</code>. You may
+customize it for your particular setup.</p>
+<p>The seed file consists on two different keys:
+- <code>truncate</code> - Boolean - delete all your previous data if true. (optional)
+- <code>data</code> - Array - list of keys and values to be inserted into the database.</p>
+<pre><code class="yaml">#
+# Seed for books
+#
+truncate: true
+data:
+  - name: Programming PHP
+    isbn: 1449392776
+  - name: JavaScript: The Good Parts
+    isbn: 0596517742
+</code></pre>
+
+<p>See the <a href="http://www.yaml.org/start.html">YAML reference</a> if you are not familiar
+with the syntax.</p>
+<p>Let's really seed it into our database:</p>
+<pre><code class="bash">$ hook db:seed
+...
+Truncating 'books'...
+Seeding 'books': 100%
+Done.
+</code></pre>
+
+<p>You can open up the console from commandline to check the collection's data:</p>
+<pre><code class="bash">$ hook console
+hook: javascript&gt; hook.collection('books').then()
+┌─────┬──────────────────────────────┬──────────────┐
+│ _id │ name                         │ isbn         │
+├─────┼──────────────────────────────┼──────────────┤
+│ '1' │ 'Programming PHP'            │ '1449392776' │
+├─────┼──────────────────────────────┼──────────────┤
+│ '2' │ 'JavaScript: The Good Parts' │ '12230626'   │
+└─────┴──────────────────────────────┴──────────────┘
+</code></pre>
+
+
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Schema" class="btn btn-neutral float-right" title="Schema"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../Getting-started/How-to-use" class="btn btn-neutral" title="How to use"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    <!-- Copyright etc -->
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        
+            <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+        
+      <span><a href="../../Getting-started/How-to-use" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../Schema" style="color: #fcfcfc">Next &raquo;</a></span>
+    </span>
+</div>
+</body>
+</html>

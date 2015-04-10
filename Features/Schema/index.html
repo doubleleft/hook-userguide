@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Schema - hook documentation</title>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script>
+
+  <style>
+    body {font-size: 90%;}
+    pre, code {font-size: 100%;}
+    h3, h4, h5, h6 {color: #2980b9; font-weight: 300}
+  </style> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../Index" class="icon icon-home"> hook documentation</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+      <ul class="current">
+    
+        
+            <li class="toctree-l1 ">
+                <a class="" href="../../Index">Overview</a>
+            </li>
+        
+
+    
+        
+        <span>Getting started</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Getting-started/How-to-use">How to use</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Features</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../Collections">Collections</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 current">
+                    <a class="current" href=".">Schema</a>
+                    
+                        <ul>
+                        
+                            <li class="toctree-l2"><a href="#introduction">Introduction</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#collection-schema">Collection schema</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#collection-relationships">Collection relationships</a></li>
+                            
+                                <li><a class="toctree-l3" href="#examples">Examples</a></li>
+                            
+                        
+                        </ul>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../Custom-routes">Custom routes</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../Configuration">Configuration</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../Template-engine">Template engine</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>More</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../More/Deployment">Deployment</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Tutorials</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Tutorials/OAuth-integration">OAuth integration</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Tutorials/Score-ranking">Score ranking</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Tutorials/Sending-mails">Sending mails</a>
+                    
+                </li>
+            
+        
+
+    
+</ul>
+
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="../../Index"></a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../Index">Docs</a> &raquo;</li>
+    <li>Schema</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/doubleleft/hook-docs/" class="icon icon-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              <h1 id="introduction">Introduction</h1>
+<p>hook's schema allows you to lock editing collection attributes, set relationships and define new collections.</p>
+<h1 id="collection-schema">Collection schema</h1>
+<p>To generate a schema based on your current collections:</p>
+<pre><code>hook generate:schema
+</code></pre>
+
+<p>The file <strong>hook-ext/schema.yaml</strong> will be created.</p>
+<p>Note that Hook currently doesn't support changing property/field types.</p>
+<p>You can push your schema changes back to the server using the deploy command:</p>
+<pre><code>hook deploy
+</code></pre>
+
+<p><strong>Example:</strong></p>
+<pre><code class="yaml">books:
+  attributes:
+    - name: name
+      type: string
+      required: true
+    - name: price
+      type: string
+      index: true
+    - name: discount
+      type: decimal
+    - name: stock
+      type: text
+    - name: description
+      type: text
+    - name: category
+      type: text
+    - name: isbn
+      type: string
+      unique: true
+    - name: tag
+      type: enum
+      allowed: ['technology', 'science', 'it']
+      default: 'science'
+    - name: test
+      type: decimal
+      total: 10
+      places: 5
+      unique: ['tag', 'name']
+</code></pre>
+
+<p>Table of supported data-types:</p>
+<table>
+<thead>
+<tr>
+<th>Data-type</th>
+<th>Allowed attributes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>boolean</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>date</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>date_time</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>time</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>binary</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>text</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>medium_text</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>long_text</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>enum</td>
+<td>allowed</td>
+</tr>
+<tr>
+<td>char</td>
+<td>length</td>
+</tr>
+<tr>
+<td>string</td>
+<td>length</td>
+</tr>
+<tr>
+<td>float</td>
+<td>total, places</td>
+</tr>
+<tr>
+<td>double</td>
+<td>total, places</td>
+</tr>
+<tr>
+<td>decimal</td>
+<td>total, places</td>
+</tr>
+<tr>
+<td>integer</td>
+<td>auto_increment, unsigned</td>
+</tr>
+<tr>
+<td>big_integer</td>
+<td>auto_increment, unsigned</td>
+</tr>
+<tr>
+<td>medium_integer</td>
+<td>auto_increment, unsigned</td>
+</tr>
+<tr>
+<td>tiny_integer</td>
+<td>auto_increment, unsigned</td>
+</tr>
+<tr>
+<td>small_integer</td>
+<td>auto_increment, unsigned</td>
+</tr>
+</tbody>
+</table>
+<h1 id="collection-relationships">Collection relationships</h1>
+<p><strong>relation-type: string</strong></p>
+<pre><code class="yaml">books:
+  relationships:
+    belongs_to: author
+</code></pre>
+
+<p><strong>relation-type: array</strong></p>
+<pre><code class="yaml">books:
+  relationships:
+    belongs_to:
+      - author
+      - publisher
+</code></pre>
+
+<h2 id="examples">Examples</h2>
+<pre><code class="yaml">authors:
+  relationships:
+    has_many:
+      - posts
+
+posts:
+  relationships:
+    belongs_to: authors
+
+books:
+  belongs_to:
+    - auths
+    - author:
+        collection: auth  # defaults to 'authors' collection
+        foreign_key: # defaults to {related}_id (author_id)
+        primary_key: # defaults to '_id'
+        required: true # defaults to false, since our priority is to be as free as possible
+        on_delete: restrict # 'restrict', 'cascade' or 'none' (defaults to 'none')
+        on_update: cascade  # 'restrict', 'cascade' or 'none' (defaults to 'none')
+</code></pre>
+
+
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Custom-routes" class="btn btn-neutral float-right" title="Custom routes"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Collections" class="btn btn-neutral" title="Collections"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    <!-- Copyright etc -->
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        
+            <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+        
+      <span><a href="../Collections" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../Custom-routes" style="color: #fcfcfc">Next &raquo;</a></span>
+    </span>
+</div>
+</body>
+</html>

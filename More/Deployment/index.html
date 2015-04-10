@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Deployment - hook documentation</title>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script>
+
+  <style>
+    body {font-size: 90%;}
+    pre, code {font-size: 100%;}
+    h3, h4, h5, h6 {color: #2980b9; font-weight: 300}
+  </style> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../Index" class="icon icon-home"> hook documentation</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+      <ul class="current">
+    
+        
+            <li class="toctree-l1 ">
+                <a class="" href="../../Index">Overview</a>
+            </li>
+        
+
+    
+        
+        <span>Getting started</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Getting-started/How-to-use">How to use</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Features</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Features/Collections">Collections</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Features/Schema">Schema</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Features/Custom-routes">Custom routes</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Features/Configuration">Configuration</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Features/Template-engine">Template engine</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>More</span>
+            
+                <li class="toctree-l1 current">
+                    <a class="current" href=".">Deployment</a>
+                    
+                        <ul>
+                        
+                            <li class="toctree-l2"><a href="#heroku">Heroku</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#openshift">OpenShift</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#google-app-engine">Google App Engine</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#web-sockets">Web Sockets</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#server-configuration">Server Configuration</a></li>
+                            
+                                <li><a class="toctree-l3" href="#apache">Apache</a></li>
+                            
+                                <li><a class="toctree-l3" href="#nginx">Nginx</a></li>
+                            
+                                <li><a class="toctree-l3" href="#iis">IIS</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#vagrant-saltstack">Vagrant / Saltstack</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#deploying-on-php-53">Deploying on PHP 5.3</a></li>
+                            
+                        
+                        </ul>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Tutorials</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Tutorials/OAuth-integration">OAuth integration</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Tutorials/Score-ranking">Score ranking</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Tutorials/Sending-mails">Sending mails</a>
+                    
+                </li>
+            
+        
+
+    
+</ul>
+
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="../../Index"></a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../Index">Docs</a> &raquo;</li>
+    <li>Deployment</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/doubleleft/hook-docs/" class="icon icon-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              <h1 id="heroku">Heroku</h1>
+<pre><code class="bash">git clone git@github.com:doubleleft/hook.git
+cd hook
+</code></pre>
+
+<p>Create an heroku app using a custom buildpack. (Thanks to <a href="https://github.com/CHH">@CHH</a>)</p>
+<pre><code class="bash">heroku create myapp --buildpack https://github.com/CHH/heroku-buildpack-php
+</code></pre>
+
+<p>Configure git remote to heroku endpoint.</p>
+<pre><code class="bash">git remote add heroku git@heroku.com:myapp.git
+git push heroku master
+</code></pre>
+
+<p>The buildpack will install nginx, php, php-fpm, and run <code>composer install</code>
+automatically. When it finishes it's already possible to hack on using
+http://myapp.herokuapp.com as your hook endpoint.</p>
+<p>By default hook uses SQLite. You can pick any database add-on available on
+Heroku to use, such as <a href="https://addons.heroku.com/cleardb">cleardb</a> (MySQL).
+Let's do this:</p>
+<pre><code class="bash">heroku addons:add cleardb
+</code></pre>
+
+<p>Run <code>heroku config</code> and check out the <code>CLEARDB_DATABASE_URL</code> variable. Let's
+extract database variables from there and edit our <code>app/config/database.php</code>
+file.</p>
+<pre><code class="php">&lt;?php
+// config/database.php
+return array(
+    'driver'   =&gt; 'mysql',
+    'host'     =&gt; 'us-cdbr-east-04.cleardb.net',
+    'username' =&gt; 'b2fe300440300f',
+    'password' =&gt; 'a7440e49',
+    'database' =&gt; 'heroku_b4270320d92f20f',
+    'collation' =&gt; 'utf8_general_ci',
+    'charset' =&gt; 'utf8'
+);
+</code></pre>
+
+<p>Push it again, and you are ready to go.</p>
+<h1 id="openshift">OpenShift</h1>
+<pre><code>git clone git@github.com:doubleleft/hook.git
+cd hook
+</code></pre>
+
+<p>Create a PHP-5.4 app from <a href="https://openshift.redhat.com/app/console/application_types?tag=php">OpenShift console</a></p>
+<pre><code>git remote add openshift ssh://53791a514382ec417500014f@php-dlapi.rhcloud.com/~/git/php.git/
+</code></pre>
+
+<p>Create a deployment hook to install <code>composer</code> dependencies.</p>
+<pre><code>mkdir -p .openshift/action_hooks
+</code></pre>
+
+<p>Deployment hook file: <code>.openshift/action_hooks/deploy</code> (needs <code>chmod +x</code>)</p>
+<pre><code>#!/bin/bash
+# Credits: http://stanlemon.net/2013/03/22/composer-on-openshift/
+
+export COMPOSER_HOME=&quot;$OPENSHIFT_DATA_DIR/.composer&quot;
+
+if [ ! -f &quot;$OPENSHIFT_DATA_DIR/composer.phar&quot; ]; then
+    curl -s https://getcomposer.org/installer | php -- --install-dir=$OPENSHIFT_DATA_DIR
+else
+  php $OPENSHIFT_DATA_DIR/composer.phar self-update
+fi
+
+( unset GIT_DIR ; cd $OPENSHIFT_REPO_DIR ; php $OPENSHIFT_DATA_DIR/composer.phar install )
+</code></pre>
+
+<p>Push your application to deploy:</p>
+<pre><code>$ git push openshift master
+</code></pre>
+
+<p>Live demo: <a href="http://php-dlapi.rhcloud.com/">http://php-dlapi.rhcloud.com/</a></p>
+<h1 id="google-app-engine">Google App Engine</h1>
+<p>It seems possible, but kinda hacky.</p>
+<p>Reference for further deep look:
+- http://blog.neoxia.com/laravel-4-on-google-appengine-for-php/
+- https://gae-php-tips.appspot.com/2013/10/22/getting-started-with-laravel-on-php-for-app-engine/
+- <a href="https://gist.github.com/gmergoil/5693102">Patched MySqlConnector</a></p>
+<h1 id="web-sockets">Web Sockets</h1>
+<p>For the websocket itself:</p>
+<pre><code class="bash">php socket/server.php
+</code></pre>
+
+<p>And you may also need to setup a socket policy server:</p>
+<pre><code class="bash">perl -Tw socket/flash_socketpolicy.pl
+</code></pre>
+
+<p>Its set to listen on port 8430 in order to be able to run it as an unprivileged user, but as the script needs to bind in port 843 we can forward ports.</p>
+<p>With iptables we can apply the following rule (of curse with <code>sudo</code> or as <code>root</code> user):</p>
+<pre><code class="bash">sudo iptables -t nat -A PREROUTING -p tcp --dport 843 -j REDIRECT --to-port 8430
+</code></pre>
+
+<p>Or with ipfw on Mac OS X:</p>
+<pre><code class="bash">sudo ipfw add 100 fwd 127.0.0.1,8430 tcp from any to me 843 in
+</code></pre>
+
+<h1 id="server-configuration">Server Configuration</h1>
+<ul>
+<li><a href="#apache">Apache</a></li>
+<li><a href="#nginx">Nginx</a></li>
+<li><a href="#iis">IIS</a></li>
+</ul>
+<h4 id="apache">Apache</h4>
+<p>You may need to add the following snippet in your Apache HTTP server virtual host configuration or <strong>.htaccess</strong> file.</p>
+<pre><code class="apacheconf">RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php)
+RewriteRule ^(.*)$ /index.php/$1 [L]
+</code></pre>
+
+<p>Alternatively, if you’re lucky enough to be using a version of Apache greater than 2.2.15, then you can instead just use this one, single line:</p>
+<pre><code class="apacheconf">FallbackResource /index.php
+</code></pre>
+
+<h4 id="nginx">Nginx</h4>
+<p>Under the <code>server</code> block of your virtual host configuration, you only need to add three lines.</p>
+<pre><code class="conf">location / {
+  try_files $uri $uri/ /index.php?$query_string;
+}
+</code></pre>
+
+<h4 id="iis">IIS</h4>
+<p>For IIS you will need to install URL Rewrite for IIS and then add the following rule to your <code>web.config</code>:</p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;configuration&gt;
+    &lt;system.webServer&gt;
+        &lt;rewrite&gt;
+            &lt;rules&gt;
+                &lt;rule name=&quot;Hook&quot; stopProcessing=&quot;true&quot;&gt;
+                    &lt;match url=&quot;^(.*)$&quot; /&gt;
+                    &lt;conditions logicalGrouping=&quot;MatchAll&quot;&gt;
+                        &lt;add input=&quot;{REQUEST_FILENAME}&quot; matchType=&quot;IsFile&quot; negate=&quot;true&quot; /&gt;
+                        &lt;add input=&quot;{REQUEST_FILENAME}&quot; matchType=&quot;IsDirectory&quot; negate=&quot;true&quot; /&gt;
+                    &lt;/conditions&gt;
+                    &lt;action type=&quot;Rewrite&quot; url=&quot;index.php/{R:1}&quot; /&gt;
+                &lt;/rule&gt;
+            &lt;/rules&gt;
+        &lt;/rewrite&gt;
+    &lt;/system.webServer&gt;
+&lt;/configuration&gt;
+</code></pre>
+
+<h1 id="vagrant-saltstack">Vagrant / Saltstack</h1>
+<p>Clone <a href="https://github.com/doubleleft/hook.git">doubleleft/hook</a> repository, in your <code>/Projects</code> dir and cd into it.</p>
+<p>Have a look in Vagrantfile and customize it for your needs.</p>
+<p>Type:</p>
+<pre><code class="bash">vagrant up
+</code></pre>
+
+<p>In order to deploy in a production server with <a href="https://github.com/saltstack/salt">Saltstack</a>, make sure you already have Salt installed. You can install it like this:</p>
+<pre><code class="bash">curl -L https://bootstrap.saltstack.com | sudo sh
+</code></pre>
+
+<p>Our salt formula accept some parameters. By default it should work out of the box in a Vagrant environment. The default values are setup like this:</p>
+<pre><code class="yaml">project_path: /vagrant
+project_username: vagrant
+proj_name: myproject
+domain_name: localhost
+</code></pre>
+
+<p>If deploying through command line, you can customize this values like this:</p>
+<pre><code class="bash">cd your/directory/root/project
+sudo salt-call -c salt state.highstate pillar='{project_path: your/directory/root/path, project_username: your-ssh-username, proj_name: hook, domain_name: hook.mydomain.com}'
+</code></pre>
+
+<p>If you are deploying inside vagrant itself through <a href="https://github.com/displague/vagrant-linode">vagrant-linode</a>, <a href="https://github.com/smdahlen/vagrant-digitalocean">vagrant-digitalocean</a> or <a href="https://github.com/mitchellh/vagrant-aws">vagrant-aws</a> for example, you could fill the salt pillar arguments right into <code>Vagrantfile</code>, like this, for ex:</p>
+<pre><code class="ruby">  config.vm.provision :salt do |salt|
+    salt.minion_config = &quot;salt/minion&quot;
+    salt.run_highstate = true
+    salt.colorize = true
+    salt.pillar({
+      &quot;project_path&quot; =&gt; &quot;/srv/www/hook&quot;,
+      &quot;project_username&quot; =&gt; &quot;ubuntu&quot;,
+      &quot;proj_name&quot; =&gt; &quot;hook&quot;,
+      &quot;domain_name&quot; =&gt; &quot;hook.mydomain.com&quot;
+    })
+  end
+</code></pre>
+
+<h1 id="deploying-on-php-53">Deploying on PHP 5.3</h1>
+<p>It's possible to downgrade hook's code to support PHP 5.3 version using <a href="https://github.com/endel/php-code-downgrade">php-code-downgrade</a> tool.</p>
+<ol>
+<li>Download and install hook:</li>
+</ol>
+<pre><code>git clone https://github.com/doubleleft/hook.git
+cd hook
+composer install
+cd ../
+</code></pre>
+
+<ol>
+<li>Install the tool in your build server:</li>
+</ol>
+<pre><code>git clone https://github.com/endel/php-code-downgrade.git
+cd php-code-downgrade
+composer install
+</code></pre>
+
+<ol>
+<li>Run the tool against hook directory to downgrade it's core and vendor features to 5.3. It's important that you have run <code>composer install</code> to install hook's dependencies before this step.</li>
+</ol>
+<pre><code>./php-code-downgrade ../hook
+</code></pre>
+
+<p>You're ready to rock on PHP5.3 servers.</p>
+
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../Tutorials/OAuth-integration" class="btn btn-neutral float-right" title="OAuth integration"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../Features/Template-engine" class="btn btn-neutral" title="Template engine"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    <!-- Copyright etc -->
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        
+            <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+        
+      <span><a href="../../Features/Template-engine" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../../Tutorials/OAuth-integration" style="color: #fcfcfc">Next &raquo;</a></span>
+    </span>
+</div>
+</body>
+</html>

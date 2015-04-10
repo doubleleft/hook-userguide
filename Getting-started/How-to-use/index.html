@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to use - hook documentation</title>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script>
+
+  <style>
+    body {font-size: 90%;}
+    pre, code {font-size: 100%;}
+    h3, h4, h5, h6 {color: #2980b9; font-weight: 300}
+  </style> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../Index" class="icon icon-home"> hook documentation</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+      <ul class="current">
+    
+        
+            <li class="toctree-l1 ">
+                <a class="" href="../../Index">Overview</a>
+            </li>
+        
+
+    
+        
+        <span>Getting started</span>
+            
+                <li class="toctree-l1 current">
+                    <a class="current" href=".">How to use</a>
+                    
+                        <ul>
+                        
+                            <li class="toctree-l2"><a href="#how-to-use">How to use</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#creating-an-application">Creating an application</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#front-end-integration">Front-end Integration</a></li>
+                            
+                        
+                        </ul>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Features</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Features/Collections">Collections</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Features/Schema">Schema</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Features/Custom-routes">Custom routes</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Features/Configuration">Configuration</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Features/Template-engine">Template engine</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>More</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../More/Deployment">Deployment</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Tutorials</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Tutorials/OAuth-integration">OAuth integration</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Tutorials/Score-ranking">Score ranking</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Tutorials/Sending-mails">Sending mails</a>
+                    
+                </li>
+            
+        
+
+    
+</ul>
+
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="../../Index"></a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../Index">Docs</a> &raquo;</li>
+    <li>How to use</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/doubleleft/hook-docs/" class="icon icon-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              <h2 id="how-to-use">How to use</h2>
+<p>Run the server locally:</p>
+<pre><code>hook server
+</code></pre>
+
+<h2 id="creating-an-application">Creating an application</h2>
+<p>Create a new application from the commandine:</p>
+<pre><code>hook app:new my-app --endpoint http://0.0.0.0:4665
+</code></pre>
+
+<p>It will output access keys to use in the front-end. Checkout this example using
+<a href="https://github.com/doubleleft/hook-javascript#how-to-use">JavaScript</a> frontend.</p>
+<p>Take a look at the <a href="https://github.com/doubleleft/hook/wiki">documentation</a> for
+more details.</p>
+<h2 id="front-end-integration">Front-end Integration</h2>
+<p>Reduce the gap between backend and frontend development:</p>
+<ul>
+<li><a href="https://github.com/doubleleft/hook-javascript">JavaScript</a> (<a href="http://doubleleft.github.io/hook-javascript">docs</a>)</li>
+<li><a href="https://github.com/doubleleft/hook-csharp">C# / Unity3D</a></li>
+<li><a href="https://github.com/doubleleft/hook-corona-sdk">Corona SDK</a></li>
+<li><a href="https://github.com/doubleleft/hook-swift">iOS / OSX</a></li>
+<li><a href="https://github.com/doubleleft/hook-android">Java / Android</a></li>
+<li><a href="https://github.com/doubleleft/hook-cpp">C++</a></li>
+<li><a href="https://github.com/doubleleft/hook-php">PHP</a> (<a href="http://doubleleft.github.io/hook-php">docs</a>)</li>
+<li><a href="https://github.com/doubleleft/hook-ruby">Ruby</a> (<a href="http://doubleleft.github.io/hook-ruby/">docs</a>)</li>
+<li><a href="https://github.com/doubleleft/hook-as3">Flash / ActionScript 3.0</a></li>
+</ul>
+
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../Features/Collections" class="btn btn-neutral float-right" title="Collections"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../Index" class="btn btn-neutral" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    <!-- Copyright etc -->
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        
+            <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+        
+      <span><a href="../../Index" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../../Features/Collections" style="color: #fcfcfc">Next &raquo;</a></span>
+    </span>
+</div>
+</body>
+</html>
