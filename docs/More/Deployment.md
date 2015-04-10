@@ -133,11 +133,7 @@ sudo ipfw add 100 fwd 127.0.0.1,8430 tcp from any to me 843 in
 
 # Server Configuration
 
-- [Apache](#apache)
-- [Nginx](#nginx)
-- [IIS](#iis)
-
-#### Apache
+**Apache**
 
 You may need to add the following snippet in your Apache HTTP server virtual host configuration or **.htaccess** file.
 
@@ -154,7 +150,7 @@ Alternatively, if you’re lucky enough to be using a version of Apache greater 
 FallbackResource /index.php
 ```
 
-#### Nginx
+**Nginx**
 
 Under the `server` block of your virtual host configuration, you only need to add three lines.
 ```conf
@@ -163,7 +159,7 @@ location / {
 }
 ```
 
-#### IIS
+**IIS**
 
 For IIS you will need to install URL Rewrite for IIS and then add the following rule to your `web.config`:
 ```xml

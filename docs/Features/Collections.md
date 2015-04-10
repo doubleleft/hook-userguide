@@ -9,9 +9,6 @@ Read the [API documentation](http://doubleleft.github.io/hook/) for details.
 
 ***
 
-Events
----
-
 Observers can listen to collection item events, such as `creating`, `created`,
 `updating`, `updated`, `saving`, `saved`, `deleting` and `deleted`.
 
@@ -43,8 +40,7 @@ class Auth {
 Let's upload the module and test what happens.
 
 ```bash
-$ hook module:upload
-Uploading: 'hook-ext/observers/auth.php'
+$ hook deploy
 ```
 
 ```
@@ -127,7 +123,7 @@ hook uses Laravel's Eloquent under the hood, so the way to build queries is
 the same. The only difference on hook is that you need a Collection reference
 to start querying.
 
-## Creating
+**Creating**
 
 Example of creating a Collection item:
 
@@ -135,7 +131,7 @@ Example of creating a Collection item:
 $stuff = App::collection('stuff')->create(["foo" => "bar"]);
 ```
 
-## Reading
+**Reading**
 
 Example retrieving a Collection reference:
 
@@ -156,7 +152,7 @@ App::collection('stuff')
   ->get();
 ```
 
-## Updating
+**Updating**
 
 ```php
 // update all items matching a filter.
@@ -167,7 +163,7 @@ $items_updated = App::collection('stuff')->where("prop_count" => 1)->update(["fo
 $items_updated = App::collection('stuff')->find(1)->update(["foo" => "bar"]);
 ```
 
-## Deleting
+**Deleting**
 
 ```php
 // remove all items matching a filter
@@ -178,7 +174,6 @@ $items_removed = App::collection('stuff')->where("votes", '<', 100)->remove();
 App::collection('stuff')->remove(42);
 ```
 
-## Continue here...
 Read more: [http://laravel.com/docs/queries](http://laravel.com/docs/queries)
 (Generally you're good by replacing `DB::table` to `App::collection` on Query
 Builder examples.)

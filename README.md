@@ -12,14 +12,18 @@ GitHub and submit a pull-request.
 How to build
 ---
 
-Install `mkdocs`, requires Python 2.7.2.
+Install the last version of `mkdocs`. It requires Python 2.7.2.
 
 ```
-pip install mkdocs
+pip install https://github.com/mkdocs/mkdocs/archive/master.zip
 ```
 
-Edit `mkdocs.yml` to add sections and build `site` directory by running `mkdocs
-build`.
+If you added a new page, add it to the `pages` section inside `mkdocs.yml` file.
+When you're ready run the following command:
+
+```
+mkdocs build --clean
+```
 
 License
 ---

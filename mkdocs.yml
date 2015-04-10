@@ -1,5 +1,5 @@
-site_name: hook documentation
-repo_url: https://github.com/doubleleft/hook-docs/
+site_name: hook-userguide
+repo_url: https://github.com/doubleleft/hook-userguide/
 
 site_description: |
     A RESTful and extendable Backend as a Service that provides
@@ -7,10 +7,7 @@ site_description: |
     integration for JavaScript, iOS, Android and more.
 
 pages:
-  - ['Index.md', 'Overview']
-
-  # Getting started
-  - ['Getting-started/How-to-use.md']
+  - ['index.md', 'Getting started']
 
   # Features
   - ['Features/Collections.md']
