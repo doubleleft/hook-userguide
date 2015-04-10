@@ -5,26 +5,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>How to use - hook documentation</title>
+  <title>hook-userguide</title>
   
+
+  <link rel="shortcut icon" href="./img/favicon.ico">
 
   
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
+  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="./css/highlight.css">
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
-  <script src="../../js/theme.js"></script>
+  <script src="./js/jquery-2.1.1.min.js"></script>
+  <script src="./js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="./js/highlight.pack.js"></script>
+  <script src="./js/theme.js"></script> 
 
-  <style>
-    body {font-size: 90%;}
-    pre, code {font-size: 100%;}
-    h3, h4, h5, h6 {color: #2980b9; font-weight: 300}
-  </style> 
+  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -34,7 +32,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../../Index" class="icon icon-home"> hook documentation</a>
+        <a href="." class="icon icon-home"> hook-userguide</a>
         
       </div>
 
@@ -42,30 +40,54 @@
       <ul class="current">
     
         
-            <li class="toctree-l1 ">
-                <a class="" href="../../Index">Overview</a>
+            <li class="toctree-l1 current">
+                <a class="current" href=".">Getting started</a>
+                
+                    <ul>
+                    
+                        <li class="toctree-l3"><a href="#installation">Installation</a></li>
+                        
+                    
+                        <li class="toctree-l3"><a href="#local-development">Local development</a></li>
+                        
+                    
+                        <li class="toctree-l3"><a href="#creating-an-application">Creating an application</a></li>
+                        
+                    
+                        <li class="toctree-l3"><a href="#front-end-integration">Front-end Integration</a></li>
+                        
+                    
+                    </ul>
+                
             </li>
         
 
     
         
-        <span>Getting started</span>
+            <span>Features</span>
             
-                <li class="toctree-l1 current">
-                    <a class="current" href=".">How to use</a>
+                <li class="toctree-l2 ">
+                    <a class="" href="Features/Collections/">Collections</a>
                     
-                        <ul>
-                        
-                            <li class="toctree-l2"><a href="#how-to-use">How to use</a></li>
-                            
-                        
-                            <li class="toctree-l2"><a href="#creating-an-application">Creating an application</a></li>
-                            
-                        
-                            <li class="toctree-l2"><a href="#front-end-integration">Front-end Integration</a></li>
-                            
-                        
-                        </ul>
+                </li>
+            
+                <li class="toctree-l2 ">
+                    <a class="" href="Features/Schema/">Schema</a>
+                    
+                </li>
+            
+                <li class="toctree-l2 ">
+                    <a class="" href="Features/Custom-routes/">Custom routes</a>
+                    
+                </li>
+            
+                <li class="toctree-l2 ">
+                    <a class="" href="Features/Configuration/">Configuration</a>
+                    
+                </li>
+            
+                <li class="toctree-l2 ">
+                    <a class="" href="Features/Template-engine/">Template engine</a>
                     
                 </li>
             
@@ -73,30 +95,10 @@
 
     
         
-        <span>Features</span>
+            <span>More</span>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../../Features/Collections">Collections</a>
-                    
-                </li>
-            
-                <li class="toctree-l1 ">
-                    <a class="" href="../../Features/Schema">Schema</a>
-                    
-                </li>
-            
-                <li class="toctree-l1 ">
-                    <a class="" href="../../Features/Custom-routes">Custom routes</a>
-                    
-                </li>
-            
-                <li class="toctree-l1 ">
-                    <a class="" href="../../Features/Configuration">Configuration</a>
-                    
-                </li>
-            
-                <li class="toctree-l1 ">
-                    <a class="" href="../../Features/Template-engine">Template engine</a>
+                <li class="toctree-l2 ">
+                    <a class="" href="More/Deployment/">Deployment</a>
                     
                 </li>
             
@@ -104,31 +106,20 @@
 
     
         
-        <span>More</span>
+            <span>Tutorials</span>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../../More/Deployment">Deployment</a>
+                <li class="toctree-l2 ">
+                    <a class="" href="Tutorials/OAuth-integration/">OAuth integration</a>
                     
                 </li>
             
-        
-
-    
-        
-        <span>Tutorials</span>
-            
-                <li class="toctree-l1 ">
-                    <a class="" href="../../Tutorials/OAuth-integration">OAuth integration</a>
+                <li class="toctree-l2 ">
+                    <a class="" href="Tutorials/Score-ranking/">Score ranking</a>
                     
                 </li>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../../Tutorials/Score-ranking">Score ranking</a>
-                    
-                </li>
-            
-                <li class="toctree-l1 ">
-                    <a class="" href="../../Tutorials/Sending-mails">Sending mails</a>
+                <li class="toctree-l2 ">
+                    <a class="" href="Tutorials/Sending-mails/">Sending mails</a>
                     
                 </li>
             
@@ -145,8 +136,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
-        <a href="../../Index"></a>
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">hook-userguide</a>
       </nav>
 
       
@@ -154,12 +145,13 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../Index">Docs</a> &raquo;</li>
-    <li>How to use</li>
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+    <li>Getting started</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="https://github.com/doubleleft/hook-docs/" class="icon icon-github"> Edit on GitHub</a>
+            <a href="https://github.com/doubleleft/hook-userguide/" class="icon icon-github"> Edit on GitHub</a>
           
         
       </li>
@@ -168,7 +160,22 @@
 </div>
           <div role="main">
             <div class="section">
-              <h2 id="how-to-use">How to use</h2>
+              <p>hook is a RESTful, extendable Backend as a Service that provides instant backend
+to develop sites and apps faster, with dead-simple integration for iOS, Android,
+JavaScript and more.</p>
+<p>It follows the same principles from <a href="http://nobackend.org/">nobackend</a>, <a href="https://github.com/hoodiehq/hoodie.js">hoodie.js</a> and <a href="http://parse.com">Parse</a></p>
+<p><strong>Requirements</strong>: PHP 5.4+, or <a href="./More/Deployment/#deploying-on-php-53">PHP 5.3</a>.</p>
+<h2 id="installation">Installation</h2>
+<p>Run this command in your terminal to get the lastest
+version:</p>
+<pre><code class="bash">curl -sSL https://raw.githubusercontent.com/doubleleft/hook/master/scripts/install.sh | bash
+</code></pre>
+
+<p>At the end of the process you should have
+<a href="https://github.com/doubleleft/hook">hook</a> and
+<a href="https://github.com/doubleleft/hook-cli.git">hook-cli</a> installed in your
+machine.</p>
+<h2 id="local-development">Local development</h2>
 <p>Run the server locally:</p>
 <pre><code>hook server
 </code></pre>
@@ -195,17 +202,14 @@ more details.</p>
 <li><a href="https://github.com/doubleleft/hook-ruby">Ruby</a> (<a href="http://doubleleft.github.io/hook-ruby/">docs</a>)</li>
 <li><a href="https://github.com/doubleleft/hook-as3">Flash / ActionScript 3.0</a></li>
 </ul>
-
             </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../Features/Collections" class="btn btn-neutral float-right" title="Collections"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="Features/Collections/" class="btn btn-neutral float-right" title="Collections"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../../Index" class="btn btn-neutral" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -231,11 +235,16 @@ more details.</p>
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
         
-            <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+            <a href="https://github.com/doubleleft/hook-userguide/" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
         
-      <span><a href="../../Index" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      <span style="margin-left: 15px"><a href="../../Features/Collections" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="Features/Collections/" style="color: #fcfcfc">Next &raquo;</a></span>
     </span>
 </div>
+
+<!--
+MkDocs version  : 0.11.1
+Docs Build Date : 2015-04-10 18:15:41.399599
+-->
 </body>
 </html>

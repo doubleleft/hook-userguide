@@ -5,8 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Collections - hook documentation</title>
+  <title>Collections - hook-userguide</title>
   
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
 
   
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
@@ -15,16 +17,12 @@
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="../../css/highlight.css">
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
   <script type="text/javascript" src="../../js/highlight.pack.js"></script>
-  <script src="../../js/theme.js"></script>
+  <script src="../../js/theme.js"></script> 
 
-  <style>
-    body {font-size: 90%;}
-    pre, code {font-size: 100%;}
-    h3, h4, h5, h6 {color: #2980b9; font-weight: 300}
-  </style> 
+  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -34,7 +32,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../../Index" class="icon icon-home"> hook documentation</a>
+        <a href="../.." class="icon icon-home"> hook-userguide</a>
         
       </div>
 
@@ -43,88 +41,55 @@
     
         
             <li class="toctree-l1 ">
-                <a class="" href="../../Index">Overview</a>
+                <a class="" href="../..">Getting started</a>
+                
             </li>
         
 
     
         
-        <span>Getting started</span>
+            <span>Features</span>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../../Getting-started/How-to-use">How to use</a>
-                    
-                </li>
-            
-        
-
-    
-        
-        <span>Features</span>
-            
-                <li class="toctree-l1 current">
-                    <a class="current" href=".">Collections</a>
+                <li class="toctree-l2 current">
+                    <a class="current" href="./">Collections</a>
                     
                         <ul>
                         
-                            <li class="toctree-l2"><a href="#introduction">Introduction</a></li>
+                            <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
                             
                         
-                            <li class="toctree-l2"><a href="#observers">Observers</a></li>
+                            <li class="toctree-l3"><a href="#observers">Observers</a></li>
                             
-                                <li><a class="toctree-l3" href="#events">Events</a></li>
-                            
-                                <li><a class="toctree-l3" href="#custom-collection-items-response">Custom collection item's response</a></li>
+                                <li><a class="toctree-l4" href="#custom-collection-items-response">Custom collection item's response</a></li>
                             
                         
-                            <li class="toctree-l2"><a href="#querying-the-database">Querying the database</a></li>
-                            
-                                <li><a class="toctree-l3" href="#creating">Creating</a></li>
-                            
-                                <li><a class="toctree-l3" href="#reading">Reading</a></li>
-                            
-                                <li><a class="toctree-l3" href="#updating">Updating</a></li>
-                            
-                                <li><a class="toctree-l3" href="#deleting">Deleting</a></li>
-                            
-                                <li><a class="toctree-l3" href="#continue-here">Continue here...</a></li>
+                            <li class="toctree-l3"><a href="#querying-the-database">Querying the database</a></li>
                             
                         
-                            <li class="toctree-l2"><a href="#seeding-collections">Seeding collections</a></li>
+                            <li class="toctree-l3"><a href="#seeding-collections">Seeding collections</a></li>
                             
                         
                         </ul>
                     
                 </li>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../Schema">Schema</a>
+                <li class="toctree-l2 ">
+                    <a class="" href="../Schema/">Schema</a>
                     
                 </li>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../Custom-routes">Custom routes</a>
+                <li class="toctree-l2 ">
+                    <a class="" href="../Custom-routes/">Custom routes</a>
                     
                 </li>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../Configuration">Configuration</a>
+                <li class="toctree-l2 ">
+                    <a class="" href="../Configuration/">Configuration</a>
                     
                 </li>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../Template-engine">Template engine</a>
-                    
-                </li>
-            
-        
-
-    
-        
-        <span>More</span>
-            
-                <li class="toctree-l1 ">
-                    <a class="" href="../../More/Deployment">Deployment</a>
+                <li class="toctree-l2 ">
+                    <a class="" href="../Template-engine/">Template engine</a>
                     
                 </li>
             
@@ -132,20 +97,31 @@
 
     
         
-        <span>Tutorials</span>
+            <span>More</span>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../../Tutorials/OAuth-integration">OAuth integration</a>
+                <li class="toctree-l2 ">
+                    <a class="" href="../../More/Deployment/">Deployment</a>
                     
                 </li>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../../Tutorials/Score-ranking">Score ranking</a>
+        
+
+    
+        
+            <span>Tutorials</span>
+            
+                <li class="toctree-l2 ">
+                    <a class="" href="../../Tutorials/OAuth-integration/">OAuth integration</a>
                     
                 </li>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../../Tutorials/Sending-mails">Sending mails</a>
+                <li class="toctree-l2 ">
+                    <a class="" href="../../Tutorials/Score-ranking/">Score ranking</a>
+                    
+                </li>
+            
+                <li class="toctree-l2 ">
+                    <a class="" href="../../Tutorials/Sending-mails/">Sending mails</a>
                     
                 </li>
             
@@ -162,8 +138,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
-        <a href="../../Index"></a>
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">hook-userguide</a>
       </nav>
 
       
@@ -171,12 +147,17 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../Index">Docs</a> &raquo;</li>
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        <li>Features &raquo;</li>
+      
+    
     <li>Collections</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="https://github.com/doubleleft/hook-docs/" class="icon icon-github"> Edit on GitHub</a>
+            <a href="https://github.com/doubleleft/hook-userguide/" class="icon icon-github"> Edit on GitHub</a>
           
         
       </li>
@@ -191,7 +172,6 @@
 <p>When extending back-end code, it's possible to use any of the core dependencies.
 Read the <a href="http://doubleleft.github.io/hook/">API documentation</a> for details.</p>
 <hr />
-<h2 id="events">Events</h2>
 <p>Observers can listen to collection item events, such as <code>creating</code>, <code>created</code>,
 <code>updating</code>, <code>updated</code>, <code>saving</code>, <code>saved</code>, <code>deleting</code> and <code>deleted</code>.</p>
 <p>You may cancel any <code>*ing</code> event by returning false, or throwing an exception.</p>
@@ -216,8 +196,7 @@ class Auth {
 </code></pre>
 
 <p>Let's upload the module and test what happens.</p>
-<pre><code class="bash">$ hook module:upload
-Uploading: 'hook-ext/observers/auth.php'
+<pre><code class="bash">$ hook deploy
 </code></pre>
 
 <pre><code>$ hook console
@@ -288,12 +267,12 @@ Even when you're creating the record.</p>
 <p>hook uses Laravel's Eloquent under the hood, so the way to build queries is
 the same. The only difference on hook is that you need a Collection reference
 to start querying.</p>
-<h2 id="creating">Creating</h2>
+<p><strong>Creating</strong></p>
 <p>Example of creating a Collection item:</p>
 <pre><code class="php">$stuff = App::collection('stuff')-&gt;create([&quot;foo&quot; =&gt; &quot;bar&quot;]);
 </code></pre>
 
-<h2 id="reading">Reading</h2>
+<p><strong>Reading</strong></p>
 <p>Example retrieving a Collection reference:</p>
 <pre><code class="php">$stuff = App::collection('stuff');
 </code></pre>
@@ -309,7 +288,7 @@ to start querying.</p>
   -&gt;get();
 </code></pre>
 
-<h2 id="updating">Updating</h2>
+<p><strong>Updating</strong></p>
 <pre><code class="php">// update all items matching a filter.
 // in this example &quot;$items_updated&quot; will receive the number of entries that has been updated.
 $items_updated = App::collection('stuff')-&gt;where(&quot;prop_count&quot; =&gt; 1)-&gt;update([&quot;foo&quot; =&gt; &quot;bar&quot;]);
@@ -318,7 +297,7 @@ $items_updated = App::collection('stuff')-&gt;where(&quot;prop_count&quot; =&gt;
 $items_updated = App::collection('stuff')-&gt;find(1)-&gt;update([&quot;foo&quot; =&gt; &quot;bar&quot;]);
 </code></pre>
 
-<h2 id="deleting">Deleting</h2>
+<p><strong>Deleting</strong></p>
 <pre><code class="php">// remove all items matching a filter
 $items_removed = App::collection('stuff')-&gt;where(&quot;votes&quot;, '&lt;', 100)-&gt;remove();
 
@@ -327,7 +306,6 @@ $items_removed = App::collection('stuff')-&gt;where(&quot;votes&quot;, '&lt;', 1
 App::collection('stuff')-&gt;remove(42);
 </code></pre>
 
-<h2 id="continue-here">Continue here...</h2>
 <p>Read more: <a href="http://laravel.com/docs/queries">http://laravel.com/docs/queries</a>
 (Generally you're good by replacing <code>DB::table</code> to <code>App::collection</code> on Query
 Builder examples.)</p>
@@ -375,18 +353,16 @@ hook: javascript&gt; hook.collection('books').then()
 │ '2' │ 'JavaScript: The Good Parts' │ '12230626'   │
 └─────┴──────────────────────────────┴──────────────┘
 </code></pre>
-
-
             </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../Schema" class="btn btn-neutral float-right" title="Schema"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../Schema/" class="btn btn-neutral float-right" title="Schema"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../Getting-started/How-to-use" class="btn btn-neutral" title="How to use"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../.." class="btn btn-neutral" title="Getting started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -412,11 +388,16 @@ hook: javascript&gt; hook.collection('books').then()
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
         
-            <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+            <a href="https://github.com/doubleleft/hook-userguide/" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
         
-      <span><a href="../../Getting-started/How-to-use" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      <span style="margin-left: 15px"><a href="../Schema" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../Schema/" style="color: #fcfcfc">Next &raquo;</a></span>
     </span>
 </div>
+
+<!--
+MkDocs version  : 0.11.1
+Docs Build Date : 2015-04-10 18:15:41.481164
+-->
 </body>
 </html>

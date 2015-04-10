@@ -5,8 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Configuration - hook documentation</title>
+  <title>Configuration - hook-userguide</title>
   
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
 
   
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
@@ -15,16 +17,12 @@
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="../../css/highlight.css">
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
   <script type="text/javascript" src="../../js/highlight.pack.js"></script>
-  <script src="../../js/theme.js"></script>
+  <script src="../../js/theme.js"></script> 
 
-  <style>
-    body {font-size: 90%;}
-    pre, code {font-size: 100%;}
-    h3, h4, h5, h6 {color: #2980b9; font-weight: 300}
-  </style> 
+  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -34,7 +32,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../../Index" class="icon icon-home"> hook documentation</a>
+        <a href="../.." class="icon icon-home"> hook-userguide</a>
         
       </div>
 
@@ -43,66 +41,56 @@
     
         
             <li class="toctree-l1 ">
-                <a class="" href="../../Index">Overview</a>
+                <a class="" href="../..">Getting started</a>
+                
             </li>
         
 
     
         
-        <span>Getting started</span>
+            <span>Features</span>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../../Getting-started/How-to-use">How to use</a>
+                <li class="toctree-l2 ">
+                    <a class="" href="../Collections/">Collections</a>
                     
                 </li>
             
-        
-
-    
-        
-        <span>Features</span>
-            
-                <li class="toctree-l1 ">
-                    <a class="" href="../Collections">Collections</a>
+                <li class="toctree-l2 ">
+                    <a class="" href="../Schema/">Schema</a>
                     
                 </li>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../Schema">Schema</a>
+                <li class="toctree-l2 ">
+                    <a class="" href="../Custom-routes/">Custom routes</a>
                     
                 </li>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../Custom-routes">Custom routes</a>
-                    
-                </li>
-            
-                <li class="toctree-l1 current">
-                    <a class="current" href=".">Configuration</a>
+                <li class="toctree-l2 current">
+                    <a class="current" href="./">Configuration</a>
                     
                         <ul>
                         
-                            <li class="toctree-l2"><a href="#storage-providers">Storage providers</a></li>
+                            <li class="toctree-l3"><a href="#storage-providers">Storage providers</a></li>
                             
                         
-                            <li class="toctree-l2"><a href="#email-providers">Email providers</a></li>
+                            <li class="toctree-l3"><a href="#email-providers">Email providers</a></li>
                             
                         
-                            <li class="toctree-l2"><a href="#composer-dependencies">Composer dependencies</a></li>
+                            <li class="toctree-l3"><a href="#composer-dependencies">Composer dependencies</a></li>
                             
                         
-                            <li class="toctree-l2"><a href="#security">Security</a></li>
+                            <li class="toctree-l3"><a href="#security">Security</a></li>
                             
                         
-                            <li class="toctree-l2"><a href="#task-scheduler">Task scheduler</a></li>
+                            <li class="toctree-l3"><a href="#task-scheduler">Task scheduler</a></li>
                             
                         
                         </ul>
                     
                 </li>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../Template-engine">Template engine</a>
+                <li class="toctree-l2 ">
+                    <a class="" href="../Template-engine/">Template engine</a>
                     
                 </li>
             
@@ -110,10 +98,10 @@
 
     
         
-        <span>More</span>
+            <span>More</span>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../../More/Deployment">Deployment</a>
+                <li class="toctree-l2 ">
+                    <a class="" href="../../More/Deployment/">Deployment</a>
                     
                 </li>
             
@@ -121,20 +109,20 @@
 
     
         
-        <span>Tutorials</span>
+            <span>Tutorials</span>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../../Tutorials/OAuth-integration">OAuth integration</a>
+                <li class="toctree-l2 ">
+                    <a class="" href="../../Tutorials/OAuth-integration/">OAuth integration</a>
                     
                 </li>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../../Tutorials/Score-ranking">Score ranking</a>
+                <li class="toctree-l2 ">
+                    <a class="" href="../../Tutorials/Score-ranking/">Score ranking</a>
                     
                 </li>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../../Tutorials/Sending-mails">Sending mails</a>
+                <li class="toctree-l2 ">
+                    <a class="" href="../../Tutorials/Sending-mails/">Sending mails</a>
                     
                 </li>
             
@@ -151,8 +139,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
-        <a href="../../Index"></a>
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">hook-userguide</a>
       </nav>
 
       
@@ -160,12 +148,17 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../Index">Docs</a> &raquo;</li>
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        <li>Features &raquo;</li>
+      
+    
     <li>Configuration</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="https://github.com/doubleleft/hook-docs/" class="icon icon-github"> Edit on GitHub</a>
+            <a href="https://github.com/doubleleft/hook-userguide/" class="icon icon-github"> Edit on GitHub</a>
           
         
       </li>
@@ -331,7 +324,7 @@ perform it.</p>
 </code></pre>
 
 <h1 id="task-scheduler">Task scheduler</h1>
-<p>Scheduled tasks is a way of scheduling <a href="../../Custom-routes">custom routes</a> to be
+<p>Scheduled tasks is a way of scheduling <a href="../Custom-routes">custom routes</a> to be
 called at a time interval.</p>
 <p>Let's generate a schedule template:</p>
 <pre><code class="bash">$ hook generate:schedule
@@ -393,17 +386,16 @@ the server.</p>
 </code></pre>
 
 <p>This pattern causes a task to be launched every minute during the 12th hour of the day, but the day of the month must be between the 1st and the 15th, the 20th and the 25, or at least it must be the 17th.</p>
-
             </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../Template-engine" class="btn btn-neutral float-right" title="Template engine"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../Template-engine/" class="btn btn-neutral float-right" title="Template engine"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../Custom-routes" class="btn btn-neutral" title="Custom routes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Custom-routes/" class="btn btn-neutral" title="Custom routes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -429,11 +421,16 @@ the server.</p>
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
         
-            <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+            <a href="https://github.com/doubleleft/hook-userguide/" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
         
-      <span><a href="../Custom-routes" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      <span style="margin-left: 15px"><a href="../Template-engine" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../Custom-routes/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../Template-engine/" style="color: #fcfcfc">Next &raquo;</a></span>
     </span>
 </div>
+
+<!--
+MkDocs version  : 0.11.1
+Docs Build Date : 2015-04-10 18:15:41.582312
+-->
 </body>
 </html>
