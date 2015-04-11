@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Application - hook-userguide</title>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script>
+
+  <style>
+    body {font-size: 90%;}
+    pre, code {font-size: 100%;}
+    h3, h4, h5, h6 {color: #2980b9; font-weight: 300}
+  </style> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> hook-userguide</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+      <ul class="current">
+    
+        
+        <span>Getting started</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Getting-started/How-to-use">How to use</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>The Basics</span>
+            
+                <li class="toctree-l1 current">
+                    <a class="current" href=".">Application</a>
+                    
+                        <ul>
+                        
+                            <li class="toctree-l2"><a href="#creating-an-application">Creating an application</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#application-keys">Application keys</a></li>
+                            
+                                <li><a class="toctree-l3" href="#application-key-cli">Application key: cli</a></li>
+                            
+                                <li><a class="toctree-l3" href="#application-key-browser">Application key: browser</a></li>
+                            
+                                <li><a class="toctree-l3" href="#application-key-device">Application key: device</a></li>
+                            
+                                <li><a class="toctree-l3" href="#application-key-server">Application key: server</a></li>
+                            
+                        
+                        </ul>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../Collections">Collections</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../Schema">Schema</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../Custom-routes">Custom routes</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../Configuration">Configuration</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../Template-engine">Template engine</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>More</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../More/Deployment">Deployment</a>
+                    
+                </li>
+            
+        
+
+    
+        
+        <span>Tutorials</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Tutorials/OAuth-integration">OAuth integration</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Tutorials/Score-ranking">Score ranking</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Tutorials/Sending-mails">Sending mails</a>
+                    
+                </li>
+            
+        
+
+    
+</ul>
+
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="../.."></a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    <li>Application</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="https://github.com/doubleleft/hook-userguide/" class="icon icon-github"> Edit on GitHub</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              <h2 id="creating-an-application">Creating an application</h2>
+<p>Having the server <a href="../../Getting-started/How-to-use/#installation">installed</a> locally
+or remotely, you'll need to create one application into that endpoint. Every
+collection or configuration on hook is tied to a single application.</p>
+<p>To create one, you'll need to run the following command from the commandline.
+Remember to copy the output of the command, which you'll need in near future.</p>
+<pre><code>hook app:new my-hook-powered-application
+</code></pre>
+
+<p>The default endpoint is <a href="http://0.0.0.0:4665/">http://0.0.0.0:4665/</a>, for local development. You'll
+need to speficy <code>endpoint</code> option if you have installed it remotely.</p>
+<pre><code>hook app:new my-hook-powered-application --endpoint http://your-server.com/
+</code></pre>
+
+<h2 id="application-keys">Application keys</h2>
+<p>After running <code>app:new</code> command, it will output the application keys:</p>
+<pre><code>$ hook app:new my-hook-powered-application
+...
+Application: my-hook-powered-application
+Keys:
+{
+  app_id: 1
+  key: 9e48d5a6acc6006d3428e7aeef8974a1
+  type: cli
+}
+{
+  app_id: 1
+  key: ff36cf472352174365f22bc2586b8dc7
+  type: browser
+}
+{
+  app_id: 1
+  key: ecec71610a738aa9df70acbae5e9fa06
+  type: device
+}
+{
+  app_id: 1
+  key: 6c8b72e1765801c4974b95cf175a451b
+  type: server
+}
+</code></pre>
+
+<p>As you can see, there is 4 different key types here. Each of them should be
+used to perform specific tasks. Most of the time you'll need to worry just
+about the <code>cli</code> and the platform you're interested in.</p>
+<h3 id="application-key-cli">Application key: cli</h3>
+<p>That's your private key that have with full access to the application. It is
+important to never expose it, so keep it secret.</p>
+<p>Only the <code>cli</code> application key has the ability to deploy the application, also
+any security check is skipped when you're using <code>hook console</code> command.</p>
+<h3 id="application-key-browser">Application key: browser</h3>
+<p>The <code>browser</code> application key is targeted for web browsers, which needs
+<a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">Cross-origin_resource_sharing</a>
+headers exposed to the client. You'll mostly use it with the
+<a href="https://github.com/doubleleft/hook-javascript">hook-javascript</a> client.</p>
+<p>By default the server will allow any host origin to get responses using a
+<code>browser</code> application key. As your application go to production, it is
+interesting to limit it's access to your server's origin using
+<a href="../../The-Basics/Configuration/#security"><code>allowed_origins</code> security configuration</a>.</p>
+<h3 id="application-key-device">Application key: device</h3>
+<p>Targeted for mobile devices. Only device application keys has the ability to
+register for push notifications.</p>
+<h3 id="application-key-server">Application key: server</h3>
+<p>Targeted for server-to-server communication.</p>
+
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Collections" class="btn btn-neutral float-right" title="Collections"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../Getting-started/How-to-use" class="btn btn-neutral" title="How to use"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    <!-- Copyright etc -->
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        
+            <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+        
+      <span><a href="../../Getting-started/How-to-use" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../Collections" style="color: #fcfcfc">Next &raquo;</a></span>
+    </span>
+</div>
+</body>
+</html>

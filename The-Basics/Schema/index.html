@@ -8,8 +8,6 @@
   <title>Schema - hook-userguide</title>
   
 
-  <link rel="shortcut icon" href="../../img/favicon.ico">
-
   
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
@@ -17,12 +15,16 @@
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="../../css/highlight.css">
 
-  <script src="../../js/jquery-2.1.1.min.js"></script>
-  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
   <script type="text/javascript" src="../../js/highlight.pack.js"></script>
-  <script src="../../js/theme.js"></script> 
+  <script src="../../js/theme.js"></script>
 
-  
+  <style>
+    body {font-size: 90%;}
+    pre, code {font-size: 100%;}
+    h3, h4, h5, h6 {color: #2980b9; font-weight: 300}
+  </style> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -40,64 +42,61 @@
       <ul class="current">
     
         
-            <li class="toctree-l1 ">
-                <a class="" href="../..">Getting started</a>
-                
-            </li>
+        <span>Getting started</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Getting-started/How-to-use">How to use</a>
+                    
+                </li>
+            
         
 
     
         
-            <span>Features</span>
+        <span>The Basics</span>
             
-                <li class="toctree-l2 ">
-                    <a class="" href="../Collections/">Collections</a>
+                <li class="toctree-l1 ">
+                    <a class="" href="../Application">Application</a>
                     
                 </li>
             
-                <li class="toctree-l2 current">
-                    <a class="current" href="./">Schema</a>
+                <li class="toctree-l1 ">
+                    <a class="" href="../Collections">Collections</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 current">
+                    <a class="current" href=".">Schema</a>
                     
                         <ul>
                         
-                            <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
+                            <li class="toctree-l2"><a href="#introduction">Introduction</a></li>
                             
                         
-                            <li class="toctree-l3"><a href="#collection-schema">Collection schema</a></li>
+                            <li class="toctree-l2"><a href="#collection-schema">Collection schema</a></li>
                             
                         
-                            <li class="toctree-l3"><a href="#collection-relationships">Collection relationships</a></li>
+                            <li class="toctree-l2"><a href="#collection-relationships">Collection relationships</a></li>
                             
-                                <li><a class="toctree-l4" href="#examples">Examples</a></li>
+                                <li><a class="toctree-l3" href="#examples">Examples</a></li>
                             
                         
                         </ul>
                     
                 </li>
             
-                <li class="toctree-l2 ">
-                    <a class="" href="../Custom-routes/">Custom routes</a>
+                <li class="toctree-l1 ">
+                    <a class="" href="../Custom-routes">Custom routes</a>
                     
                 </li>
             
-                <li class="toctree-l2 ">
-                    <a class="" href="../Configuration/">Configuration</a>
+                <li class="toctree-l1 ">
+                    <a class="" href="../Configuration">Configuration</a>
                     
                 </li>
             
-                <li class="toctree-l2 ">
-                    <a class="" href="../Template-engine/">Template engine</a>
-                    
-                </li>
-            
-        
-
-    
-        
-            <span>More</span>
-            
-                <li class="toctree-l2 ">
-                    <a class="" href="../../More/Deployment/">Deployment</a>
+                <li class="toctree-l1 ">
+                    <a class="" href="../Template-engine">Template engine</a>
                     
                 </li>
             
@@ -105,20 +104,31 @@
 
     
         
-            <span>Tutorials</span>
+        <span>More</span>
             
-                <li class="toctree-l2 ">
-                    <a class="" href="../../Tutorials/OAuth-integration/">OAuth integration</a>
+                <li class="toctree-l1 ">
+                    <a class="" href="../../More/Deployment">Deployment</a>
                     
                 </li>
             
-                <li class="toctree-l2 ">
-                    <a class="" href="../../Tutorials/Score-ranking/">Score ranking</a>
+        
+
+    
+        
+        <span>Tutorials</span>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Tutorials/OAuth-integration">OAuth integration</a>
                     
                 </li>
             
-                <li class="toctree-l2 ">
-                    <a class="" href="../../Tutorials/Sending-mails/">Sending mails</a>
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Tutorials/Score-ranking">Score ranking</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../../Tutorials/Sending-mails">Sending mails</a>
                     
                 </li>
             
@@ -135,8 +145,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">hook-userguide</a>
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="../.."></a>
       </nav>
 
       
@@ -145,11 +155,6 @@
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../..">Docs</a> &raquo;</li>
-    
-      
-        <li>Features &raquo;</li>
-      
-    
     <li>Schema</li>
       <li class="wy-breadcrumbs-aside">
         
@@ -334,16 +339,18 @@ books:
         on_delete: restrict # 'restrict', 'cascade' or 'none' (defaults to 'none')
         on_update: cascade  # 'restrict', 'cascade' or 'none' (defaults to 'none')
 </code></pre>
+
+
             </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../Custom-routes/" class="btn btn-neutral float-right" title="Custom routes"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../Custom-routes" class="btn btn-neutral float-right" title="Custom routes"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../Collections/" class="btn btn-neutral" title="Collections"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Collections" class="btn btn-neutral" title="Collections"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -369,16 +376,11 @@ books:
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
         
-            <a href="https://github.com/doubleleft/hook-userguide/" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+            <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
         
-      <span><a href="../Collections/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      <span style="margin-left: 15px"><a href="../Custom-routes/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../Collections" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../Custom-routes" style="color: #fcfcfc">Next &raquo;</a></span>
     </span>
 </div>
-
-<!--
-MkDocs version  : 0.11.1
-Docs Build Date : 2015-04-10 18:15:41.496561
--->
 </body>
 </html>
