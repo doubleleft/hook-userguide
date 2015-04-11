@@ -96,7 +96,7 @@ Be careful to not truncate collections with user generated content.
 
 The interactive console is a tool to use the
 [javascript](https://github.com/doubleleft/hook-javascript) interface with the
-[CLI application key](The-Basics/Application/#application-key-cli)
+[CLI application key](../The-Basics/Application/#application-key-cli)
 interactively from your terminal.
 
 ```
@@ -131,7 +131,7 @@ hook generate:channel <channel-name>
 hook generate:observer <collection-name>
 ```
 
-See [more about observers here](The-Basics/Collections/#observers).
+See [more about observers here](../The-Basics/Collections/#observers).
 
 **generate:route** - Generate a custom route for the application.
 
@@ -139,7 +139,7 @@ See [more about observers here](The-Basics/Collections/#observers).
 hook generate:route <path> [method=GET]
 ```
 
-See [more about custom routes here](The-Basics/Custom-routes/).
+See [more about custom routes here](../The-Basics/Custom-routes/).
 
 **generate:schema** - Generate schema definition config.
 
@@ -147,7 +147,7 @@ See [more about custom routes here](The-Basics/Custom-routes/).
 hook generate:schema
 ```
 
-See [more about schema definition here](The-Basics/Schema/).
+See [more about schema definition here](../The-Basics/Schema/).
 
 **generate:seed** - Generate seed template.
 
@@ -156,7 +156,7 @@ hook generate:seed <collection-name>
 ```
 
 See [more about seeding collections
-here](The-Basics/Collections/#seeding-collections).
+here](../The-Basics/Collections/#seeding-collections).
 
 **generate:template** - Generate an HTML template.
 
@@ -164,7 +164,7 @@ here](The-Basics/Collections/#seeding-collections).
 hook generate:template <template-name>
 ```
 
-See [more about templates here](The-Basics/Templates/).
+See [more about templates here](../The-Basics/Templates/).
 
 # Retrieving application data
 
