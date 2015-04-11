@@ -105,7 +105,7 @@ mail:
 - [Sending mails](https://github.com/doubleleft/hook/wiki/Sending-mails)
 
 
-# Composer dependencies
+# Composer packages
 
 You're able to require any composer package into your project.
 
