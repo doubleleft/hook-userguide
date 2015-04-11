@@ -11,13 +11,15 @@ pages:
 
   # Getting started
   - ['Getting-started/How-to-use.md', 'Getting started', 'How to use']
+  # - ['Getting-started/The-Commandline-Interface.md', 'Getting started', 'How to use']
 
   # Features
-  - ['Features/Collections.md']
-  - ['Features/Schema.md']
-  - ['Features/Custom-routes.md']
-  - ['Features/Configuration.md']
-  - ['Features/Template-engine.md']
+  - ['The-Basics/Application.md']
+  - ['The-Basics/Collections.md']
+  - ['The-Basics/Schema.md']
+  - ['The-Basics/Custom-routes.md']
+  - ['The-Basics/Configuration.md']
+  - ['The-Basics/Template-engine.md']
 
   # More
   - ['More/Deployment.md']
