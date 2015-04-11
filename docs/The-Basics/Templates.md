@@ -1,4 +1,8 @@
-Templates are compiled using mustache or handlebars syntax.
+# How to use
+
+Templates may be used as email contents, or the response of [custom
+routes](The-Basics/Custom-routes/). They're compiled using mustache or
+handlebars syntax.
 
 Generating a template from commandline:
 
@@ -8,7 +12,7 @@ hook generate:template user_signup
 Template created at 'hook-ext/templates/user_signup.html'.
 ```
 
-Consuming a template:
+Consuming the template:
 
 ```php
 $string = Module::template('user_signup.html')->compile(array(

@@ -11,15 +11,14 @@ pages:
 
   # Getting started
   - ['Getting-started/How-to-use.md', 'Getting started', 'How to use']
-  # - ['Getting-started/The-Commandline-Interface.md', 'Getting started', 'How to use']
 
   # Features
   - ['The-Basics/Application.md']
   - ['The-Basics/Collections.md']
   - ['The-Basics/Schema.md']
   - ['The-Basics/Custom-routes.md']
+  - ['The-Basics/Templates.md']
   - ['The-Basics/Configuration.md']
-  - ['The-Basics/Template-engine.md']
 
   # More
   - ['More/Deployment.md']
@@ -29,5 +28,6 @@ pages:
   - ['Tutorials/Score-ranking.md']
   - ['Tutorials/Sending-mails.md']
 
+# google_analytics: ['UA-36723568-3', 'mkdocs.org']
 use_directory_urls: true
 theme: readthedocs
