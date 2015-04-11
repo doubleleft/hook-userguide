@@ -7,7 +7,10 @@ site_description: |
     integration for JavaScript, iOS, Android and more.
 
 pages:
-  - ['index.md', 'Getting started']
+  - ['index.md']
+
+  # Getting started
+  - ['Getting-started/How-to-use.md', 'Getting started', 'How to use']
 
   # Features
   - ['Features/Collections.md']
