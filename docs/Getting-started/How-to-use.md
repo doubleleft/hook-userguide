@@ -1,6 +1,6 @@
-## Installation
+# Installation
 
-Run this command in your terminal to get the lastest version of
+Run the following command in your terminal to install the latest version of
 [hook](https://github.com/doubleleft/hook) and
 [hook-cli](https://github.com/doubleleft/hook-cli.git):
 
@@ -10,8 +10,7 @@ curl -sSL https://raw.githubusercontent.com/doubleleft/hook/master/scripts/insta
 
 # Local development server
 
-To run the development server locally, `cd` into hook directory, then run the
-`server` command:
+To run a local development server, `cd` into hook directory, then run the `server` command:
 
 ```
 $ cd ~/Projects/hook
@@ -99,22 +98,26 @@ The interactive console is a tool to use the
 [CLI application key](../The-Basics/Application/#application-key-cli)
 interactively from your terminal.
 
+It is designed for testing and debugging your application code and evaluating state.
+
 ```
 $ hook console
-...
-client: javascript> config
-{ name: 'my-hook-powered-application',
-  app_id: '1',
-  key: '9e48d5a6acc6006d3428e7aeef8974a1',
-  endpoint: 'http://0.0.0.0:4665/' }
 ```
 
-Every time the JavaScript client try to return a Promise, it will immediatelly
-be evaluated, and the output will be displayed in the console. Example:
+The console can be closed by pressing  `Ctrl+C` twice.
+
+The console has the JavaScript client instantiated by default as `hook`. Unlike the browser environment, every time the client tries to return a Promise, it will immediatelly be evaluated and its output will formatted and displayed.
+
+Example:
 
 ```
 client: javascript> hook.collection('events').count()
 2
+```
+The console JavaScript client also has extended permissions on hook's restricted collections:
+```
+client: javascript>  hook.collection('auths').select('email').get()
+...
 ```
 
 # Generators
