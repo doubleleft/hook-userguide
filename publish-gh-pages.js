@@ -1,7 +1,9 @@
 var ghpages = require('gh-pages');
 var path = require('path');
 
-ghpages.publish(path.join(__dirname, 'site'), function(err) {
+ghpages.publish(path.join(__dirname, 'site'), {
+  repo: "https://" + process.env.GH_TOKEN + "@github.com/doubleleft/hook-userguide"
+}, function(err) {
   if (err) {
     console.log(err)
   } else {
