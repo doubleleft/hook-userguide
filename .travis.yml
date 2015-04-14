@@ -4,7 +4,7 @@ node_js:
   - "0.12"
 
 before_script:
-  - pip install https://github.com/mkdocs/mkdocs/archive/master.zip
+  - pip install https://github.com/mkdocs/mkdocs/archive/master.zip --user
   - mkdocs build
   - npm install
 
