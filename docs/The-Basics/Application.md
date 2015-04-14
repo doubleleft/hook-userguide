@@ -71,7 +71,7 @@ headers exposed to the client. You'll mostly use it with the
 By default the server will allow any host origin to get responses using a
 `browser` application key. As your application go to production, it is
 interesting to limit it's access to your server's origin using
-[`allowed_origins` security configuration](The-Basics/Configuration/#security).
+[`allowed_origins` security configuration](Configuration/#security).
 
 ### Application key: device
 
