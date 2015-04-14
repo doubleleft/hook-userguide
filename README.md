@@ -1,4 +1,4 @@
-hook-userguide
+hook-userguide [![Build status](https://travis-ci.org/doubleleft/hook-userguide.svg?branch=master)](https://travis-ci.org/doubleleft/hook-userguide) [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/doubleleft/hook?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ===
 
 User guide for [hook](https://github.com/doubleleft/hook). Built using [mkdocs](https://github.com/mkdocs/mkdocs).
