@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Schema - hook-userguide</title>
+  <title>Logging - hook-userguide</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -75,23 +75,8 @@
                     
                 </li>
             
-                <li class="toctree-l2 current">
-                    <a class="current" href="./">Schema</a>
-                    
-                        <ul>
-                        
-                            <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
-                            
-                        
-                            <li class="toctree-l3"><a href="#collection-schema">Collection schema</a></li>
-                            
-                        
-                            <li class="toctree-l3"><a href="#collection-relationships">Collection relationships</a></li>
-                            
-                                <li><a class="toctree-l4" href="#examples">Examples</a></li>
-                            
-                        
-                        </ul>
+                <li class="toctree-l2 ">
+                    <a class="" href="../Schema/">Schema</a>
                     
                 </li>
             
@@ -110,8 +95,15 @@
                     
                 </li>
             
-                <li class="toctree-l2 ">
-                    <a class="" href="../Logging/">Logging</a>
+                <li class="toctree-l2 current">
+                    <a class="current" href="./">Logging</a>
+                    
+                        <ul>
+                        
+                            <li class="toctree-l3"><a href="#logging">Logging</a></li>
+                            
+                        
+                        </ul>
                     
                 </li>
             
@@ -177,7 +169,7 @@
         
       
     
-    <li>Schema</li>
+    <li>Logging</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -191,176 +183,21 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="introduction">Introduction</h1>
-<p>hook's schema allows you to lock editing collection attributes, set relationships and define new collections.</p>
-<h1 id="collection-schema">Collection schema</h1>
-<p>To generate a schema based on your current collections:</p>
-<pre><code>hook generate:schema
+                <h1 id="logging">Logging</h1>
+<p>You can log custom messages using the following commands:</p>
+<pre><code class="php">Logger::log(&quot;message&quot;); // Which defaults to INFO level
+Logger::debug(&quot;message&quot;);
+Logger::info(&quot;message&quot;);
+Logger::warn(&quot;message&quot;);
+Logger::error(&quot;message&quot;);
 </code></pre>
 
-<p>The file <strong>hook-ext/schema.yaml</strong> will be created.</p>
-<p>Note that Hook currently doesn't support changing property/field types.</p>
-<p>You can push your schema changes back to the server using the deploy command:</p>
-<pre><code>hook deploy
+<p>All logs will be written to a text file, which you can read by running:</p>
+<pre><code>hook logs
 </code></pre>
 
-<p><strong>Example:</strong></p>
-<pre><code class="yaml">books:
-  attributes:
-    - name: name
-      type: string
-      required: true
-    - name: price
-      type: string
-      index: true
-    - name: discount
-      type: decimal
-    - name: stock
-      type: text
-    - name: description
-      type: text
-    - name: category
-      type: text
-    - name: isbn
-      type: string
-      unique: true
-    - name: tag
-      type: enum
-      allowed: ['technology', 'science', 'it']
-      default: 'science'
-    - name: test
-      type: decimal
-      total: 10
-      places: 5
-      unique: ['tag', 'name']
-</code></pre>
-
-<p>Table of supported data-types:</p>
-<table>
-<thead>
-<tr>
-<th>Data-type</th>
-<th>Allowed attributes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>boolean</td>
-<td><em>none</em></td>
-</tr>
-<tr>
-<td>date</td>
-<td><em>none</em></td>
-</tr>
-<tr>
-<td>date_time</td>
-<td><em>none</em></td>
-</tr>
-<tr>
-<td>time</td>
-<td><em>none</em></td>
-</tr>
-<tr>
-<td>timestamp</td>
-<td><em>none</em></td>
-</tr>
-<tr>
-<td>binary</td>
-<td><em>none</em></td>
-</tr>
-<tr>
-<td>text</td>
-<td><em>none</em></td>
-</tr>
-<tr>
-<td>medium_text</td>
-<td><em>none</em></td>
-</tr>
-<tr>
-<td>long_text</td>
-<td><em>none</em></td>
-</tr>
-<tr>
-<td>enum</td>
-<td>allowed</td>
-</tr>
-<tr>
-<td>char</td>
-<td>length</td>
-</tr>
-<tr>
-<td>string</td>
-<td>length</td>
-</tr>
-<tr>
-<td>float</td>
-<td>total, places</td>
-</tr>
-<tr>
-<td>double</td>
-<td>total, places</td>
-</tr>
-<tr>
-<td>decimal</td>
-<td>total, places</td>
-</tr>
-<tr>
-<td>integer</td>
-<td>auto_increment, unsigned</td>
-</tr>
-<tr>
-<td>big_integer</td>
-<td>auto_increment, unsigned</td>
-</tr>
-<tr>
-<td>medium_integer</td>
-<td>auto_increment, unsigned</td>
-</tr>
-<tr>
-<td>tiny_integer</td>
-<td>auto_increment, unsigned</td>
-</tr>
-<tr>
-<td>small_integer</td>
-<td>auto_increment, unsigned</td>
-</tr>
-</tbody>
-</table>
-<h1 id="collection-relationships">Collection relationships</h1>
-<p><strong>relation-type: string</strong></p>
-<pre><code class="yaml">books:
-  relationships:
-    belongs_to: author
-</code></pre>
-
-<p><strong>relation-type: array</strong></p>
-<pre><code class="yaml">books:
-  relationships:
-    belongs_to:
-      - author
-      - publisher
-</code></pre>
-
-<h2 id="examples">Examples</h2>
-<pre><code class="yaml">authors:
-  relationships:
-    has_many:
-      - posts
-
-posts:
-  relationships:
-    belongs_to: authors
-
-books:
-  belongs_to:
-    - auths
-    - author:
-        collection: auth  # defaults to 'authors' collection
-        foreign_key: # defaults to {related}_id (author_id)
-        primary_key: # defaults to '_id'
-        required: true # defaults to false, since our priority is to be as free as possible
-        on_delete: restrict # 'restrict', 'cascade' or 'none' (defaults to 'none')
-        on_update: cascade  # 'restrict', 'cascade' or 'none' (defaults to 'none')
+<p>You can also ask for a larger number of lines by adding an additional parameter:</p>
+<pre><code>hook logs -n 1000
 </code></pre>
               
             </div>
@@ -369,10 +206,10 @@ books:
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../Custom-routes/" class="btn btn-neutral float-right" title="Custom routes"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../More/Deployment/" class="btn btn-neutral float-right" title="Deployment"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../Collections/" class="btn btn-neutral" title="Collections"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Configuration/" class="btn btn-neutral" title="Configuration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -401,10 +238,10 @@ books:
           <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../Collections/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../Configuration/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../Custom-routes/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../More/Deployment/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
