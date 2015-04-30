@@ -19,6 +19,7 @@ pages:
   - ['The-Basics/Custom-routes.md']
   - ['The-Basics/Templates.md']
   - ['The-Basics/Configuration.md']
+  - ['The-Basics/Logging.md']
 
   # More
   - ['More/Deployment.md']
