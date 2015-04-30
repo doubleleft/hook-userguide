@@ -42,3 +42,4 @@ Uploading: 'hook-ext/routes/get_update_something.php'
 $ hook console
 hook: javascript> hook.get('update_something')
 { hey: 'It works!' }
+```
