@@ -16,7 +16,40 @@ need to speficy `endpoint` option if you have installed it remotely.
 
 ```
 hook app:new my-hook-powered-application --endpoint http://your-server.com/
+...
+create hook-ext/security.yaml
+create hook-ext/packages.yaml
+create hook-ext/schedule.yaml
+create hook-ext/schema.yaml
+create hook-ext/config/config.yaml
+create hook-ext/config/config.development.yaml
+create hook-ext/credentials/development/cli.json
+create hook-ext/credentials/development/browser.json
+create hook-ext/credentials/development/device.json
+create hook-ext/credentials/development/server.json
+Application created successfully.
 ```
+
+The `app:new` command will scaffold the available [configuration](Configuration)
+files. As you can see `development` is the default environment, when not
+specified.
+
+## Application environment
+
+In a real scenario you will need to handle different environments, such as
+staging and production. In hook you'll need to create an application for each
+one of them.
+
+The CLI offers a handy `--environment` (`--env`) option for that.
+
+Example, creating an `staging` application:
+
+```
+hook app:new my-application --environment staging
+```
+
+Having your different environment credentials, ou may specify the
+`--environment` for commands such as `db:seed` and `deploy`.
 
 ## Application keys
 

@@ -65,7 +65,7 @@ dropbox/dropbox-sdk: 1.1.*
 
 # Email providers
 
-You can change your email service provider at any time be editing your `hook-ext/config.yaml`'s `mail` section.
+You can change your email service provider at any time be editing your `hook-ext/config/config.yaml`'s `mail` section.
 
 **Supported drivers:**
 
@@ -79,7 +79,7 @@ You can change your email service provider at any time be editing your `hook-ext
 **Example with SMTP:**
 
 ```yaml
-# hook-ext/config.yaml
+# hook-ext/config/config.yaml
 
 mail:
   driver: 'smtp'
@@ -93,7 +93,7 @@ mail:
 **Example with `amazon_ses` preset:**
 
 ```yaml
-# hook-ext/config.yaml
+# hook-ext/config/config.yaml
 
 mail:
   driver: amazon_ses
@@ -102,7 +102,7 @@ mail:
 ```
 
 **Related content:**
-- [Sending mails](https://github.com/doubleleft/hook/wiki/Sending-mails)
+- [Sending mails](../Tutorials/Sending-mails)
 
 
 # Composer packages
