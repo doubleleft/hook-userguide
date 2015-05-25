@@ -46,6 +46,13 @@ Example, creating an `staging` application:
 
 ```
 hook app:new my-application --environment staging
+...
+create hook-ext/config/config.staging.yaml
+create hook-ext/credentials/staging/cli.json
+create hook-ext/credentials/staging/browser.json
+create hook-ext/credentials/staging/device.json
+create hook-ext/credentials/staging/server.json
+Application created successfully.
 ```
 
 Having your different environment credentials, ou may specify the
@@ -53,42 +60,17 @@ Having your different environment credentials, ou may specify the
 
 ## Application keys
 
-After running `app:new` command, it will output the application keys:
+The application keys are located under
+`hook-ext/credentials/{environment}/*.json`, and should be used with one of the
+[client implementations](/hook-userguide/).
 
-```
-$ hook app:new my-hook-powered-application
-...
-Application: my-hook-powered-application
-Keys:
-{
-  app_id: 1
-  key: 9e48d5a6acc6006d3428e7aeef8974a1
-  type: cli
-}
-{
-  app_id: 1
-  key: ff36cf472352174365f22bc2586b8dc7
-  type: browser
-}
-{
-  app_id: 1
-  key: ecec71610a738aa9df70acbae5e9fa06
-  type: device
-}
-{
-  app_id: 1
-  key: 6c8b72e1765801c4974b95cf175a451b
-  type: server
-}
-```
-
-As you can see, there is 4 different key types here. Each of them should be
-used to perform specific tasks. Most of the time you'll need to worry just
-about the `cli` and the platform you're interested in.
+There is 4 different types of credential keys. Each of them should be used to
+perform specific tasks. Most of the time you'll need to worry just about the
+`cli` and the platform you're interested in.
 
 ### Application key: cli
 
-That's your private key that have with full access to the application. It is
+That's your private key that have full access to the application. It is
 important to never expose it, so keep it secret.
 
 Only the `cli` application key has the ability to deploy the application, also
