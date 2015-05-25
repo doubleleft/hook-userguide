@@ -6,7 +6,7 @@ node_js:
 before_script:
   - git config --global user.email "noreply@travis-ci.org"
   - git config --global user.name "travis-ci"
-  - sudo pip install https://github.com/mkdocs/mkdocs/archive/master.zip
+  - sudo pip install mkdocs
   - mkdocs build
   - npm install
 
