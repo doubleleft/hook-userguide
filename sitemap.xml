@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>None/</loc>
+     <lastmod>2015-07-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>None/Getting-started/How-to-use/</loc>
+     <lastmod>2015-07-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>None/The-Basics/Application/</loc>
+     <lastmod>2015-07-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/The-Basics/Collections/</loc>
+     <lastmod>2015-07-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/The-Basics/Schema/</loc>
+     <lastmod>2015-07-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/The-Basics/Custom-routes/</loc>
+     <lastmod>2015-07-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/The-Basics/Mail/</loc>
+     <lastmod>2015-07-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/The-Basics/Templates/</loc>
+     <lastmod>2015-07-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/The-Basics/Configuration/</loc>
+     <lastmod>2015-07-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/The-Basics/Logging/</loc>
+     <lastmod>2015-07-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/More/Deployment/</loc>
+     <lastmod>2015-07-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/Tutorials/OAuth-integration/</loc>
+     <lastmod>2015-07-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/Tutorials/Score-ranking/</loc>
+     <lastmod>2015-07-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+</urlset>
