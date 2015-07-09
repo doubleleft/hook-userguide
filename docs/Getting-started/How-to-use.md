@@ -25,6 +25,10 @@ Press Ctrl-C to quit.
 The default endpoint for local development server is
 [http://0.0.0.0:4665](http://0.0.0.0:4665).
 
+# Creating a new application
+
+The first step to develop application with hook, is to create a [new
+application](../The-Basics/Application/) in the server.
 
 # Deploying your application
 

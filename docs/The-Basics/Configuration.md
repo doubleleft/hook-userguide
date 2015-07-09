@@ -1,110 +1,3 @@
-Any configuration change need your application to be deployed with the following
-command:
-
-```
-hook deploy
-```
-
-# Storage providers
-
-**Windows Azure**
-
-Windows Azure Blob Storage config:
-
-```yaml
-storage:
-  provider: windows_azure
-  account: account_name
-  key: secret_key_here
-  container: uploads # optional
-```
-
-Add to your `hook-ext/packages.yaml`:
-
-```yaml
-microsoft/windowsazure: 0.4.0
-pear-pear.php.net/mail_mime: "*"
-pear-pear.php.net/http_request2: "*"
-pear-pear.php.net/mail_mimedecode: "*"
-```
-
-**Amazon AWS**
-
-Amazon Web Services - Simple Storage Service config:
-
-```yaml
-storage:
-  provider: amazon_aws
-  key: YOUR_AWS_KEY
-  secret: YOUR_AWS_SECRET
-  bucket: uploads
-```
-
-Add to your `hook-ext/packages.yaml`:
-
-```yaml
-aws/aws-php-sdk: 2.7.*
-```
-
-**Dropbox**
-
-1. Create an [Dropbox API App](https://www.dropbox.com/developers/apps/create), with "Files and Datastores".
-2. Generate your OAuth 2 access token.
-
-```yaml
-storage:
-  provider: dropbox
-  access_token: YOUR_ACCESS_TOKEN
-```
-
-Add to your `hook-ext/packages.yaml`:
-
-```yaml
-dropbox/dropbox-sdk: 1.1.*
-```
-
-# Email providers
-
-You can change your email service provider at any time be editing your `hook-ext/config/config.yaml`'s `mail` section.
-
-**Supported drivers:**
-
-- `mail` (default)
-- `sendmail`
-- `smtp`
-- `sendgrid` ([preset](https://github.com/doubleleft/hook/tree/master/src/Mailer/presets/sendgrid.php))
-- `gmail` ([preset](https://github.com/doubleleft/hook/tree/master/src/Mailer/presets/gmail.php))
-- `amazon_ses` ([preset](https://github.com/doubleleft/hook/tree/master/src/Mailer/presets/amazon_ses.php))
-
-**Example with SMTP:**
-
-```yaml
-# hook-ext/config/config.yaml
-
-mail:
-  driver: 'smtp'
-  host: 'smtp.gmail.com'
-  port: 465
-  encryption: 'ssl'
-  username: 'your-email@gmail.com'
-  password: 'your-password'
-```
-
-**Example with `amazon_ses` preset:**
-
-```yaml
-# hook-ext/config/config.yaml
-
-mail:
-  driver: amazon_ses
-  userame: user@domain.com
-  password: password123
-```
-
-**Related content:**
-- [Sending mails](../Tutorials/Sending-mails)
-
-
 # Composer packages
 
 You're able to require any composer package into your project.
@@ -201,6 +94,112 @@ collections:
     update: 'owner'
     delete: 'owner'
 ```
+
+Any configuration change need your application to be deployed with the following
+command:
+
+```
+hook deploy
+```
+
+# Storage providers
+
+**Windows Azure**
+
+Windows Azure Blob Storage config:
+
+```yaml
+storage:
+  provider: windows_azure
+  account: account_name
+  key: secret_key_here
+  container: uploads # optional
+```
+
+Add to your `hook-ext/packages.yaml`:
+
+```yaml
+microsoft/windowsazure: 0.4.0
+pear-pear.php.net/mail_mime: "*"
+pear-pear.php.net/http_request2: "*"
+pear-pear.php.net/mail_mimedecode: "*"
+```
+
+**Amazon AWS**
+
+Amazon Web Services - Simple Storage Service config:
+
+```yaml
+storage:
+  provider: amazon_aws
+  key: YOUR_AWS_KEY
+  secret: YOUR_AWS_SECRET
+  bucket: uploads
+```
+
+Add to your `hook-ext/packages.yaml`:
+
+```yaml
+aws/aws-php-sdk: 2.7.*
+```
+
+**Dropbox**
+
+1. Create an [Dropbox API App](https://www.dropbox.com/developers/apps/create), with "Files and Datastores".
+2. Generate your OAuth 2 access token.
+
+```yaml
+storage:
+  provider: dropbox
+  access_token: YOUR_ACCESS_TOKEN
+```
+
+Add to your `hook-ext/packages.yaml`:
+
+```yaml
+dropbox/dropbox-sdk: 1.1.*
+```
+
+# Email providers
+
+You can change your email service provider at any time be editing your
+`hook-ext/config/config.yaml`'s `mail` section.
+
+**Supported drivers:**
+
+- `mail` (default)
+- `sendmail`
+- `smtp`
+- `sendgrid` ([preset](https://github.com/doubleleft/hook/tree/master/src/Mailer/presets/sendgrid.php))
+- `gmail` ([preset](https://github.com/doubleleft/hook/tree/master/src/Mailer/presets/gmail.php))
+- `amazon_ses` ([preset](https://github.com/doubleleft/hook/tree/master/src/Mailer/presets/amazon_ses.php))
+
+**Example with SMTP:**
+
+```yaml
+# hook-ext/config/config.yaml
+
+mail:
+  driver: 'smtp'
+  host: 'smtp.gmail.com'
+  port: 465
+  encryption: 'ssl'
+  username: 'your-email@gmail.com'
+  password: 'your-password'
+```
+
+**Example with `amazon_ses` preset:**
+
+```yaml
+# hook-ext/config/config.yaml
+
+mail:
+  driver: amazon_ses
+  userame: user@domain.com
+  password: password123
+```
+
+See more: [how to send emails](Mail).
 
 # Task scheduler
 
