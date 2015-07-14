@@ -14,6 +14,7 @@ pages:
 
   # Features
   - ['The-Basics/Application.md']
+  - ['The-Basics/Authentication.md']
   - ['The-Basics/Collections.md']
   - ['The-Basics/Schema.md']
   - ['The-Basics/Custom-routes.md']
@@ -26,7 +27,6 @@ pages:
   - ['More/Deployment.md']
 
   # Tutorials
-  - ['Tutorials/OAuth-integration.md']
   - ['Tutorials/Score-ranking.md']
 
 # google_analytics: ['UA-36723568-3', 'mkdocs.org']
