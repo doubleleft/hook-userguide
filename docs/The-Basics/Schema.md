@@ -1,28 +1,13 @@
 # Introduction
 
-hook's schema allows you to lock editing collection attributes, set relationships and define new collections.
-
-# Collection schema
-
-To generate a schema based on your current collections:
-
-```
-hook generate:schema
-```
-
-The file __hook-ext/schema.yaml__ will be created.
-
-Note that Hook currently doesn't support changing property/field types.
-
-You can push your schema changes back to the server using the deploy command:
-```
-hook deploy
-```
-
+hook's schema allows you to define the data-types of your fields in collections,
+and assign relationships. It serves as well as a documentation of your current
+database schema for everyone in the team.
 
 **Example:**
 
 ```yaml
+# hook-ext/schema.yaml
 books:
   attributes:
     - name: name
@@ -53,6 +38,35 @@ books:
       unique: ['tag', 'name']
 ```
 
+Every time you change the `hook-ext/schema.yaml` file, it's required to run
+`deploy` command to modify it on the server.
+
+```
+hook deploy
+```
+
+# Security
+
+As you read in [collections](Collections) documentation, the collections always
+are auto-migrated when a new row is created with a field that doesn't exist in
+the database.
+
+This may speed-up your development process, but it's scary to run this way in
+production. That is where `lock_attributes` come in:
+
+```yaml
+# hook-ext/schema.yaml
+books:
+  lock_attributes: true
+  attributes:
+    - ...
+    - ...
+```
+
+When a collection have `lock_attributes`, any field name provided for update or
+create will be ignored if it's not defined on your schema.
+
+# Data-types
 
 Table of supported data-types:
 
@@ -79,17 +93,15 @@ Table of supported data-types:
 | tiny_integer | auto_increment, unsigned |
 | small_integer | auto_increment, unsigned |
 
-# Collection relationships
+# Relationships
 
-**relation-type: string**
+## → `belongs_to`
 
 ```yaml
 books:
   relationships:
     belongs_to: author
 ```
-
-**relation-type: array**
 
 ```yaml
 books:
@@ -99,7 +111,7 @@ books:
       - publisher
 ```
 
-## Examples
+**Complex example**
 
 ```yaml
 authors:
@@ -115,10 +127,66 @@ books:
   belongs_to:
     - auths
     - author:
-        collection: auth  # defaults to 'authors' collection
-        foreign_key: # defaults to {related}_id (author_id)
-        primary_key: # defaults to '_id'
-        required: true # defaults to false, since our priority is to be as free as possible
-        on_delete: restrict # 'restrict', 'cascade' or 'none' (defaults to 'none')
-        on_update: cascade  # 'restrict', 'cascade' or 'none' (defaults to 'none')
+        collection: auth       # defaults to 'authors' collection
+        foreign_key: author_id # defaults to {related}_id (author_id)
+        primary_key: _id       # defaults to '_id'
+        required: true         # defaults to false, since our priority is to be as free as possible
+        on_delete: restrict    # 'restrict', 'cascade' or 'none' (defaults to 'none')
+        on_update: cascade     # 'restrict', 'cascade' or 'none' (defaults to 'none')
+```
+
+## → `has_many`
+
+```yaml
+author:
+  relationships:
+    has_many: books
+```
+
+```yaml
+author:
+  relationships:
+    has_many:
+      - books
+```
+
+## → `has_one`
+
+```yaml
+author:
+  relationships:
+    has_one: book
+```
+
+## → `has_many_through`
+
+```yaml
+# 'books' collection
+books:
+ attributes:
+   - name: name
+     type: string
+
+# 'book_authors' intermediary collection
+book_authors:
+  relationships:
+    belongs_to:
+      - books
+      - authors
+
+# 'authors' collection
+authors:
+  attributes:
+    - name: name
+      type: string
+
+  relationships:
+    has_many:
+      - books:
+          through: book_authors
+          collection: books  # defaults to 'books' collection
+          foreign_key: author_id # defaults to {related}_id (author_id)
+          far_key: # defaults to '{relation}_id' (book_id)
+          local_key: _id # defaults to _id
+          required: true # defaults to false, since our priority is to be as free as possible
 ```
