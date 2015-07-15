@@ -106,12 +106,21 @@
                 <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
                 
             
-                <li class="toctree-l3"><a href="#collection-schema">Collection schema</a></li>
+                <li class="toctree-l3"><a href="#security">Security</a></li>
                 
             
-                <li class="toctree-l3"><a href="#collection-relationships">Collection relationships</a></li>
+                <li class="toctree-l3"><a href="#data-types">Data-types</a></li>
                 
-                    <li><a class="toctree-l4" href="#examples">Examples</a></li>
+            
+                <li class="toctree-l3"><a href="#relationships">Relationships</a></li>
+                
+                    <li><a class="toctree-l4" href="#belongs_to">→ belongs_to</a></li>
+                
+                    <li><a class="toctree-l4" href="#has_many">→ has_many</a></li>
+                
+                    <li><a class="toctree-l4" href="#has_one">→ has_one</a></li>
+                
+                    <li><a class="toctree-l4" href="#has_many_through">→ has_many_through</a></li>
                 
             
             </ul>
@@ -228,20 +237,12 @@
             <div class="section">
               
                 <h1 id="introduction">Introduction</h1>
-<p>hook's schema allows you to lock editing collection attributes, set relationships and define new collections.</p>
-<h1 id="collection-schema">Collection schema</h1>
-<p>To generate a schema based on your current collections:</p>
-<pre><code>hook generate:schema
-</code></pre>
-
-<p>The file <strong>hook-ext/schema.yaml</strong> will be created.</p>
-<p>Note that Hook currently doesn't support changing property/field types.</p>
-<p>You can push your schema changes back to the server using the deploy command:</p>
-<pre><code>hook deploy
-</code></pre>
-
+<p>hook's schema allows you to define the data-types of your fields in collections,
+and assign relationships. It serves as well as a documentation of your current
+database schema for everyone in the team.</p>
 <p><strong>Example:</strong></p>
-<pre><code class="yaml">books:
+<pre><code class="yaml"># hook-ext/schema.yaml
+books:
   attributes:
     - name: name
       type: string
@@ -271,6 +272,28 @@
       unique: ['tag', 'name']
 </code></pre>
 
+<p>Every time you change the <code>hook-ext/schema.yaml</code> file, it's required to run
+<code>deploy</code> command to modify it on the server.</p>
+<pre><code>hook deploy
+</code></pre>
+
+<h1 id="security">Security</h1>
+<p>As you read in <a href="../Collections">collections</a> documentation, the collections always
+are auto-migrated when a new row is created with a field that doesn't exist in
+the database.</p>
+<p>This may speed-up your development process, but it's scary to run this way in
+production. That is where <code>lock_attributes</code> come in:</p>
+<pre><code class="yaml"># hook-ext/schema.yaml
+books:
+  lock_attributes: true
+  attributes:
+    - ...
+    - ...
+</code></pre>
+
+<p>When a collection have <code>lock_attributes</code>, any field name provided for update or
+create will be ignored if it's not defined on your schema.</p>
+<h1 id="data-types">Data-types</h1>
 <p>Table of supported data-types:</p>
 <table>
 <thead>
@@ -362,14 +385,13 @@
 </tr>
 </tbody>
 </table>
-<h1 id="collection-relationships">Collection relationships</h1>
-<p><strong>relation-type: string</strong></p>
+<h1 id="relationships">Relationships</h1>
+<h2 id="belongs_to">→ <code>belongs_to</code></h2>
 <pre><code class="yaml">books:
   relationships:
     belongs_to: author
 </code></pre>
 
-<p><strong>relation-type: array</strong></p>
 <pre><code class="yaml">books:
   relationships:
     belongs_to:
@@ -377,7 +399,7 @@
       - publisher
 </code></pre>
 
-<h2 id="examples">Examples</h2>
+<p><strong>Complex example</strong></p>
 <pre><code class="yaml">authors:
   relationships:
     has_many:
@@ -391,12 +413,61 @@ books:
   belongs_to:
     - auths
     - author:
-        collection: auth  # defaults to 'authors' collection
-        foreign_key: # defaults to {related}_id (author_id)
-        primary_key: # defaults to '_id'
-        required: true # defaults to false, since our priority is to be as free as possible
-        on_delete: restrict # 'restrict', 'cascade' or 'none' (defaults to 'none')
-        on_update: cascade  # 'restrict', 'cascade' or 'none' (defaults to 'none')
+        collection: auth       # defaults to 'authors' collection
+        foreign_key: author_id # defaults to {related}_id (author_id)
+        primary_key: _id       # defaults to '_id'
+        required: true         # defaults to false, since our priority is to be as free as possible
+        on_delete: restrict    # 'restrict', 'cascade' or 'none' (defaults to 'none')
+        on_update: cascade     # 'restrict', 'cascade' or 'none' (defaults to 'none')
+</code></pre>
+
+<h2 id="has_many">→ <code>has_many</code></h2>
+<pre><code class="yaml">author:
+  relationships:
+    has_many: books
+</code></pre>
+
+<pre><code class="yaml">author:
+  relationships:
+    has_many:
+      - books
+</code></pre>
+
+<h2 id="has_one">→ <code>has_one</code></h2>
+<pre><code class="yaml">author:
+  relationships:
+    has_one: book
+</code></pre>
+
+<h2 id="has_many_through">→ <code>has_many_through</code></h2>
+<pre><code class="yaml"># 'books' collection
+books:
+ attributes:
+   - name: name
+     type: string
+
+# 'book_authors' intermediary collection
+book_authors:
+  relationships:
+    belongs_to:
+      - books
+      - authors
+
+# 'authors' collection
+authors:
+  attributes:
+    - name: name
+      type: string
+
+  relationships:
+    has_many:
+      - books:
+          through: book_authors
+          collection: books  # defaults to 'books' collection
+          foreign_key: author_id # defaults to {related}_id (author_id)
+          far_key: # defaults to '{relation}_id' (book_id)
+          local_key: _id # defaults to _id
+          required: true # defaults to false, since our priority is to be as free as possible
 </code></pre>
               
             </div>
