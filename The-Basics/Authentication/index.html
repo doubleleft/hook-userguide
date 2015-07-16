@@ -279,9 +279,8 @@ class Auths {
 logging-in users, just don't define the <code>login</code> method on <code>auths</code> observer.</p>
 <h1 id="oauth">Oauth</h1>
 <p>For Oauth integration with 3rd party services, such as Twitter, Facebook, G+,
-etc. You'll need to require the <a href="https://github.com/doubleleft/hook-javascript/blob/master/src/plugins/oauth.js">OAuth
-plugin</a>
-in your webapp.</p>
+etc. You'll need to require the <a href="https://github.com/doubleleft/hook-javascript-oauth">OAuth
+plugin</a> in your webapp.</p>
 <pre><code class="javascript">var hook = new Hook.Client({/* browser credentials */});
 hook.oauth.popup('facebook').then(function(data) {
   console.log(&quot;Logged in:&quot;, data.first_name);
