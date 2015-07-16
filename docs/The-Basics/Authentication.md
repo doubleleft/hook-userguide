@@ -72,8 +72,7 @@ logging-in users, just don't define the `login` method on `auths` observer.
 
 For Oauth integration with 3rd party services, such as Twitter, Facebook, G+,
 etc. You'll need to require the [OAuth
-plugin](https://github.com/doubleleft/hook-javascript/blob/master/src/plugins/oauth.js)
-in your webapp.
+plugin](https://github.com/doubleleft/hook-javascript-oauth) in your webapp.
 
 ```javascript
 var hook = new Hook.Client({/* browser credentials */});
