@@ -422,55 +422,46 @@ tool and some manual fixes. (see item 5 below)</p>
 <ol>
 <li>Download and install hook:</li>
 </ol>
-<pre><code>git clone https://github.com/doubleleft/hook.git
-cd hook
-composer install
-cd ../
-</code></pre>
-
+<p><code>git clone https://github.com/doubleleft/hook.git
+  cd hook
+  composer install
+  cd ../</code></p>
 <ol>
 <li>Edit the <code>composer.json</code> file and add the following dependency for <a href="https://github.com/packfire/php5.3-compatibility">5.3
    compatiblity</a>:</li>
 </ol>
-<pre><code class="json">{
-  ...
-  &quot;require&quot;: {
-    &quot;packfire/php5.3-compat&quot;: &quot;~1.0.0&quot;
-  }
-  ...
-}
-</code></pre>
-
+<p><code>json
+  {
+    ...
+    "require": {
+      "packfire/php5.3-compat": "~1.0.0"
+    }
+    ...
+  }</code></p>
 <ol>
 <li>Install the downgrade tool:</li>
 </ol>
-<pre><code>git clone https://github.com/endel/php-code-downgrade.git
-cd php-code-downgrade
-composer install
-</code></pre>
-
+<p><code>git clone https://github.com/endel/php-code-downgrade.git
+  cd php-code-downgrade
+  composer install</code></p>
 <ol>
 <li>Run the tool against hook directory to downgrade it's core and vendor features to 5.3. It's important that you have run <code>composer install</code> to install hook's dependencies before this step.</li>
 </ol>
-<pre><code>./php-code-downgrade ../hook
-</code></pre>
-
+<p><code>./php-code-downgrade ../hook</code></p>
 <ol>
 <li>Try to run hook test suite, and fix manually the reference errors:</li>
 </ol>
-<pre><code>make test
-</code></pre>
-
+<p><code>make test</code></p>
 <p><strong>Common problems:</strong></p>
 <p><strong>Traits</strong>: Injected trait code may loose reference to it's <code>use</code> definitions.
-Fill the complete class path for those cases.</p>
+  Fill the complete class path for those cases.</p>
 <p><code>class_uses</code> not implemented: Since PHP5.3 don't have support for traits, any
-algorithm that relies on <code>class_uses</code> are useless. Replace it by <code>array()</code> and
-should be good.</p>
+  algorithm that relies on <code>class_uses</code> are useless. Replace it by <code>array()</code> and
+  should be good.</p>
 <p><strong>Typehint</strong>: Remove <code>callable</code> typehint from parameter definitions.</p>
 <p><strong>Closures</strong>: PHP5.3 needs to use <code>$that</code> reference to access the previous scope
-inside closures. Any method called from <code>$that</code> inside the closure must be
-defined as <code>public</code>.</p>
+  inside closures. Any method called from <code>$that</code> inside the closure must be
+  defined as <code>public</code>.</p>
 <ol>
 <li>Deploy it at your own risk</li>
 </ol>
