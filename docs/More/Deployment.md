@@ -247,7 +247,6 @@ tool and some manual fixes. (see item 5 below)
 git clone https://github.com/doubleleft/hook.git
 cd hook
 composer install
-cd ../
 ```
 
 **2.** Edit the `composer.json` file and add the following dependency for [5.3
@@ -255,6 +254,7 @@ cd ../
 
 ```bash
 composer require packfire/php5.3-compat
+cd ../
 ```
 
 **3.** Install the downgrade tool:
