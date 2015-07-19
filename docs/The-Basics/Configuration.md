@@ -13,7 +13,7 @@ Add the external package into `hook-ext/packages.yaml`:
 gregwar/captcha: "dev-master"
 ```
 
-Create a custom route to output captcha image::
+Create a custom route to output captcha image:
 
 ```
 $ hook generate:route catpcha

@@ -234,7 +234,12 @@ If you are deploying inside vagrant itself through [vagrant-linode](https://gith
 
 # Deploying on PHP 5.3
 
-It's possible to downgrade hook's code to support PHP 5.3 version using [php-code-downgrade](https://github.com/endel/php-code-downgrade) tool.
+It's not recommended to deploy hook on PHP 5.3. Use this guide if strictly
+necessary.
+
+It's possible to downgrade hook's code and dependencies to support PHP 5.3
+version using [php-code-downgrade](https://github.com/endel/php-code-downgrade)
+tool and some manual fixes. (see item 5 below)
 
 1. Download and install hook:
 
@@ -245,7 +250,20 @@ composer install
 cd ../
 ```
 
-2. Install the tool in your build server:
+2. Edit the `composer.json` file and add the following dependency for [5.3
+   compatiblity](https://github.com/packfire/php5.3-compatibility):
+
+```json
+{
+  ...
+  "require": {
+    "packfire/php5.3-compat": "~1.0.0"
+  }
+  ...
+}
+```
+
+3. Install the downgrade tool:
 
 ```
 git clone https://github.com/endel/php-code-downgrade.git
@@ -253,10 +271,31 @@ cd php-code-downgrade
 composer install
 ```
 
-3. Run the tool against hook directory to downgrade it's core and vendor features to 5.3. It's important that you have run `composer install` to install hook's dependencies before this step.
+4. Run the tool against hook directory to downgrade it's core and vendor features to 5.3. It's important that you have run `composer install` to install hook's dependencies before this step.
 
 ```
 ./php-code-downgrade ../hook
 ```
 
-You're ready to rock on PHP5.3 servers.
+5. Try to run hook test suite, and fix manually the reference errors:
+
+```
+make test
+```
+
+**Common problems:**
+
+**Traits**: Injected trait code may loose reference to it's `use` definitions.
+Fill the complete class path for those cases.
+
+`class_uses` not implemented: Since PHP5.3 don't have support for traits, any
+algorithm that relies on `class_uses` are useless. Replace it by `array()` and
+should be good.
+
+**Typehint**: Remove `callable` typehint from parameter definitions.
+
+**Closures**: PHP5.3 needs to use `$that` reference to access the previous scope
+inside closures. Any method called from `$that` inside the closure must be
+defined as `public`.
+
+6. Deploy it at your own risk
